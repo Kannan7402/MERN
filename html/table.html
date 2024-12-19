@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <title>TABLE</title>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width" />
+        <meta name="author" content="KANNAN">
+        <style>
+           table {
+            border-collapse: collapse;
+            border: 2px solid;
+           }
+           td,th {
+            border:1px solid;
+            padding: 10px 20px;
+           }
+        </style>
+    </head>
+    <body>
+        <h1>TABLE</h1>
+        <p>Basic table with border collapse,border and padding</p>
+        <!--basic table-->
+        <table>
+            <thead>
+                <tr>
+                    <th>S.NO</th>
+                    <th>NAME</th>
+                    <th>DEPT</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>KANNAN</td>
+                    <td>LAMP</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>LOKESH</td>
+                    <td>LAMP</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>RATHESH</td>
+                    <td>LAMP</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <h3>ROWSPAN</h3>
+        <!--table with rowspan-->
+        <table>
+            <thead>
+                <tr>
+                    <th >S.NO</th>
+                    <th>NAME</th>
+                    <th>DEPT</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="3">1</td>
+                    <td>KANNAN</td>
+                    <td>LAMP</td>
+                    </tr>
+                    <tr>   
+                        <td>KANNAN</td>
+                        <td>LAMP</td>
+                        </tr>
+                        <tr>
+                            <td>KANNAN</td>
+                            <td>LAMP</td>
+                            </tr>
+        </table>
+        <hr>
+        <h3>COLSPAN</h3>
+        <!--table with colspan-->
+        <table>
+            <thead>
+                <tr>
+                    <th >S.NO</th>
+                    <th>NAME</th>
+                    <th>DEPT</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>KANNAN</td>
+                    <td>LAMP</td>
+                    </tr>
+                    <tr>   
+                        <td colspan="2">KANNAN</td>
+                        <td>LAMP</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">KANNAN</td>
+                            <td>LAMP</td>
+                            </tr>
+        </table>
+        
+        <hr>
+        <br>
+        <h3>ADVANCED TABLE-<small>includes colspan,rowspan,colgroup,caption</small></h3>
+        <!--table with colspan,rowspan,colgroup,caption-->
+        <table>
+            <caption>This is a table</caption>
+            <colgroup>
+                <col span="3">
+                <col style="background-color: brown;">
+            </colgroup>
+            <tr>
+                <td rowspan="2">ALPHABETS</td>
+                <td colspan="5">VOWELS</td>
+                <td>CONSONANTS</td>
+            </tr>
+            <tr>
+                <td>A</td>
+                <td>E</td>
+                <td>I</td>
+                <td>O</td>
+                <td>U</td>
+                <td>Other than A,E,I,O,U </td>
+            </tr>
+        </table>
+        <hr>
+    </body> 
+</html>
