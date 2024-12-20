@@ -1,0 +1,6 @@
+#h2:hover{
+    background-color: rgb(168, 213, 32);
+}
+p:not(#not-affect){
+    color:rgb(10, 10, 192);
+}

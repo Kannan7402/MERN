@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <title>FORMS AND STYLES</title>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width"/>
+        <meta name="author" content="KANNAN">
+        <style>
+               form{
+                color: rgb(42, 12, 69);
+                background-color: rgb(82, 126, 126);
+               }
+               #kan{
+                color: rgb(64, 211, 23);
+               }
+               .p-style{
+                color: blueviolet;
+               }
+               input[type]{
+                color: rgb(235, 22, 22);
+               }
+        </style>
+         <!---->
+        <!--THIS IS A INTERNAL CSS using id,element, class-->
+        <!---->
+        <link rel="stylesheet" href="../css/basics.css">
+        <!--Link to css and html-->
+        <body>
+            <h1 style="color: brown;">FORMS</h1>
+             <!---->
+            <!--INLINE CSS-->
+            <p>The below examples are forms with different buttons </p>
+            <h2>FORM WITH RADIO BUTTON</h2>
+            <!---->
+            <!--This is form 1-->
+            <form>
+                <fieldset>
+                    <legend>Select Option</legend>
+                        <p>
+                            <input type="radio" name="char" value="small" />
+                            <label for="size_1">Small</label>
+                        </p>
+                        <p>
+                            <input type="radio" name="char" value="medium" />
+                            <label for="size_2">Medium</label>
+                        </p>
+                        <p>
+                             <input type="radio" name="char" value="large" />
+                            <label for="size_3">Large</label>
+                        </p>
+                    </fieldset>
+            </form>
+            <!---->
+            <hr>
+            <h3>FORM WITH USER INPUT</h3>
+            <form>
+            <fieldset>
+                <legend>SUBMIT</legend>
+                    <label>NAME</label>
+                    <input type="text">
+                    <br>
+                    <br>
+                    <label>COMMENT</label>
+                    <input type="text">
+                    <input type="submit">
+            </fieldset>
+        </form>
+        <h2>CSS</h2>
+        <p id="kan">Using <small> ID </small> selectors in css </p>
+        <!--internal css using id-->
+        <p class="p-style">
+            hi
+        </p>
+        <p class="p-style">hello</p>
+        <p class="p-style">bye- <small>class selector</small></p>
+        <hr>
+        <p>The input typed will be in different color <small>-Attribute selector</small></p>
+        <input type="text">
+        <hr>
+        <!--id h2 link with external css-->
+        <!---->
+        <h2 id="h2">Pseudo class</h2>
+        <p>If the pesudo class is hovered it changers color</p>
+        <p id="not-affect">This will not be in blue because of pesudo class not</p>
+        </body>
+    </head>
+</html>

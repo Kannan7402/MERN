@@ -8,11 +8,11 @@
     </head>
     <body>
         <h2>IMAGE</h2>
-        <img loading="lazy"src="html-js-css-icon-vector.jpg" width="100px" height="100px" title="html,css,js">
+        <img loading="lazy"src="html_icon.jpg" width="100px" height="100px" title="html,css,js">
         <p>Above image has the attribute loading - lazy,width and height 100px AND title html,css,js</p>
         <h3>Image - Use Map attribute</h3>
         <figure>
-        <img src="html-js-css-icon-vector.jpg" usemap="#image-map">
+        <img src="html_icon.jpg" usemap="#image-map">
         <map name="image-map">
           <area target="_blank" alt="html" title="html" href="https://www.w3schools.com/html/" coords="71,45,131,89" shape="rect">
           <area target="_blank" alt="js" title="js" href="https://www.w3schools.com/js/default.asp" coords="54,119,84,158" shape="rect">
@@ -23,19 +23,20 @@
         <hr>
         <h2>VIDEO</h2>
         <video controls width="250px"disablepictureinpicture poster="html-js-css-icon-vector.jpg">
-            <source src="big_buck_bunny_720p_1mb.mp4">
+            <source src="sample_video.mp4">
         </video>
         <p>Above video has controls width 250px and disabled picture in picture</p>
         <p>used image as a poster</p>
         <hr>
         <h2>AUDIO</h2>
         <audio controls muted >
-            <source src="./sample-12s.mp3">
+            <source src="sample_audio.mp3">
         </audio>
         <br>
         <hr>
         <h2>IFrame</h2>
-        <iframe src="create html.html">
+        <iframe src="createl.html" id="el" allowfullscreen>
         </iframe>
+        <script src="../javascript/basic.js"></script>
     </body>
 </html>
