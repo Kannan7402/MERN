@@ -8,11 +8,7 @@
         body {
             font-family: Arial, sans-serif;
         }
-        .theme-button {
-            padding: 10px 20px;
-            margin-top: 20px;
-            cursor: pointer;
-        }
+
     </style>
 </head>
 <body>
@@ -50,7 +46,7 @@
         });
  
         // Apply the saved theme when the page loads
-        applyTheme();
+        applyTheme()
  
         if (sessionStorage.getItem('name')) {
             document.getElementById('displayName').textContent = sessionStorage.getItem('name');

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Example</title>
+</head>
+<body>
+    <h1>Cookie Operations Example</h1>
+    <!-- Buttons to Create, Update, Delete, and Display Cookies -->
+    <button onclick="createCookie('username', 'JohnDoe', 7)">Create Cookie</button>
+    <button onclick="updateCookie('username', 'JaneDoe', 7)">Update Cookie</button>
+    <button onclick="deleteCookie('username')">Delete Cookie</button>
+    <button onclick="displayCookie()">Display Cookie</button>
+    <p id="cookieDisplay"></p>
+    <script>
+        // Function to create a cookie
+        function createCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                const date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); // Set expiration time
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/"; // Set cookie
+            alert("Cookie Created: " + name + "=" + value);
+        }
+        // Function to get the value of a cookie
+        function getCookie(name) {
+            const nameEQ = name + "=";
+            const ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i].trim();
+                if (c.indexOf(nameEQ) === 0) {
+                    return c.substring(nameEQ.length, c.length);
+                }
+            }
+            return null; // Cookie not found
+        }
+        // Function to update a cookie (same as create if cookie already exists)
+        function updateCookie(name, value, days) {
+            createCookie(name, value, days); // Re-create cookie to update it
+            alert("Cookie Updated: " + name + "=" + value);
+        }
+        // Function to delete a cookie
+        function deleteCookie(name) {
+            createCookie(name, "", -1); // Set cookie expiration to the past
+            alert("Cookie Deleted: " + name);
+        }
+        // Function to display the cookie value
+        function displayCookie() {
+            const username = getCookie("username");
+            document.getElementById("cookieDisplay").innerHTML = username ? "Cookie Value: " + username : "No cookie found";
+        }
+    </script>
+</body>
+</html>
