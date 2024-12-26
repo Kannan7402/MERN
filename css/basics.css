@@ -1,6 +1,20 @@
-#h2:hover{
-    background-color: rgb(168, 213, 32);
+   /* The below code is linked with create html*/
+p{
+    color: rgb(121, 11, 238);
 }
-p:not(#not-affect){
-    color:rgb(10, 10, 192);
+h1,h2,h3,h4,h5{
+    color: rgb(176, 92, 8);
+}
+head , body {
+    border: 10px;
+    border: solid;
+    border-width: 5px;
+    text-align: left;
+    max-width: 400px;margin: auto;
+    background-color: rgb(207, 188, 188);
+    border-color: chartreuse;
+}
+#div{
+    background-color: black;
+    color: azure;
 }
