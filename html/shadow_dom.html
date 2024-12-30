@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Shadow DOM Example</title>
+</head>
+<body>
+<h1>Welcome to Shadow DOM Example</h1>
+<div id="shadowHost">I am a shadow host!</div>
+<script>
+        let shadowHost = document.getElementById("shadowHost");
+        let shadowRoot = shadowHost.attachShadow({mode: 'open'});
+        shadowRoot.innerHTML = `
+<style>
+                h2 {
+                    color: red;
+                }
+                p {
+                    color: blue;
+                }
+</style>
+<h2>This is inside the Shadow DOM!</h2>
+<p>This content is isolated from the main document.</p>
+        `;
+</script>
+ 
+ 
+</body>
+</html>

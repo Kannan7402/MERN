@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+ 
+    </head>
+    <body>
+        <p data-name="lokesh" id="name"></p>
+        <button onclick="createWorker()">create worker</button>
+        <button onclick="createshared()">create shared</button>
+        <script>
+            const ptag = document.getElementById('name');
+           console.log(ptag.dataset);
+            ptag.dataset
+        function createWorker(){
+                const worker = new Worker('worker.js');
+                worker.postMessage('hello');
+                worker.onmessage= ()=>{
+                    console.log(event.data);
+                }
+            }
+        function createshared(){
+            const shared = new SharedWorker('sharedworker.js');
+            shared.port.postMessage('hello');
+            shared.port.onmessage=(event)=>{
+                console.log(event.data);
+            }
+        }
+        </script>
+    </body>
+</html>

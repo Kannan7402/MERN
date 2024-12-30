@@ -3,128 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event Handling Demo</title>
+    <title>HTML Events Example</title>
     <style>
-        #animatedBox {
-            width: 100px;
-            height: 100px;
-            background-color: lightcoral;
-            animation: boxAnimation 2s infinite;
-        }
-        @keyframes boxAnimation {
-            0% { background-color: lightcoral; }
-            50% { background-color: lightblue; }
-            100% { background-color: lightcoral; }
-        }
-        #focusInput {
+        #eventInfo {
             margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
         }
-        #messageBox {
-            margin-top: 20px;
-            font-size: 20px;
-            font-weight: bold;
+        #eventInfo p {
+            margin: 5px 0;
         }
     </style>
 </head>
 <body>
- 
-    <h1>Event Handling Demo</h1>
- 
-    <!-- Animation Box -->
-    <div id="animatedBox"></div>
- 
-    <!-- Mouse Event Section -->
-    <h2>Click the button:</h2>
-    <button id="clickButton">Click Me</button>
- 
-    <!-- Keyboard Event Section -->
-    <h2>Press a key:</h2>
-    <input type="text" id="keyboardInput" placeholder="Press any key" />
- 
-    <!-- Focus Event Section -->
-    <h2>Focus on the input field:</h2>
-    <input type="text" id="focusInput" placeholder="Focus on me" />
- 
-    <!-- Form Event Section -->
-    <h2>Submit a form:</h2>
-    <form id="myForm">
-        <input type="text" id="formInput" placeholder="Type something">
-        <button type="submit">Submit</button>
+    <h1>HTML Events Demonstration</h1>
+
+    <p>Click on the elements below to trigger various events and see the results in the box.</p>
+
+    <!-- Mouse Events -->
+    <button id="clickButton">Click Me (Click Event)</button>
+    <button id="dblClickButton">Double Click Me (Double Click Event)</button>
+    <div id="mouseArea" style="width:200px;height:200px;border:1px solid #000;">
+        <p>Move your mouse here (Mouse Move Event)</p>
+    </div>
+
+    <br><br>
+
+    <!-- Keyboard Events -->
+    <input type="text" id="keyboardInput" placeholder="Type something (Keyboard Event)">
+    <p>Press any key inside the input field (Key Press Event)</p>
+
+    <br><br>
+
+    <!-- Focus & Blur Events -->
+    <input type="text" id="focusInput" placeholder="Focus on me (Focus Event)">
+    <p>Focus and blur the input field (Focus/Blur Events)</p>
+
+    <br><br>
+
+    <!-- Form Events -->
+    <form id="sampleForm">
+        <input type="text" id="formInput" name="name" placeholder="Enter your name">
+        <button type="submit">Submit Form (Submit Event)</button>
     </form>
- 
-    <!-- Touch Event Section -->
-    <h2>Touch the screen:</h2>
-    <p id="touchArea" style="border: 2px solid black; width: 200px; height: 200px; margin-top: 10px;">Touch here</p>
- 
-    <!-- Window Resize Event Section -->
-    <h2>Resize the window:</h2>
-    <p id="resizeMessage">Resize the window to see the message.</p>
- 
-    <!-- Network Event Section -->
-    <h2>Network Connectivity:</h2>
-    <p id="networkStatus">Network status: Unknown</p>
- 
-    <!-- Message Box for Event Notifications -->
-    <div id="messageBox"></div>
- 
+
+    <br><br>
+
+    <!-- Window Events -->
+    <button id="resizeButton">Click to Trigger Resize (Resize Event)</button>
+    <p>Resize the window (Resize Event)</p>
+
+    <br><br>
+
+    <!-- Document Events -->
+    <button id="DOMContentLoadedButton">Click to Trigger DOMContentLoaded (DOMContentLoaded Event)</button>
+    <p>Click the button to log when the DOM is fully loaded.</p>
+
+    <br><br>
+
+    <!-- Event Information Box -->
+    <div id="eventInfo">
+        <h3>Event Information:</h3>
+        <p id="eventType"></p>
+        <p id="eventTarget"></p>
+        <p id="eventTime"></p>
+    </div>
+
     <script>
-        // Animation Event (Triggered when animation ends)
-        const animatedBox = document.getElementById('animatedBox');
-        animatedBox.addEventListener('animationend', () => {
-            alert('Animation Ended!');
+        // Helper function to display event info
+        function displayEventInfo(event) {
+            document.getElementById("eventType").textContent = "Event Type: " + event.type;
+            document.getElementById("eventTarget").textContent = "Event Target: " + event.target.id;
+            document.getElementById("eventTime").textContent = "Event Time: " + event.timeStamp;
+        }
+
+        // Mouse Events
+        document.getElementById("clickButton").addEventListener("click", function(event) {
+            displayEventInfo(event);
+            alert("Button clicked!");
         });
- 
-        // Mouse Event (Triggered when the button is clicked)
-        document.getElementById('clickButton').addEventListener('click', () => {
-            alert('Button Clicked!');
+
+        document.getElementById("dblClickButton").addEventListener("dblclick", function(event) {
+            displayEventInfo(event);
+            alert("Button double-clicked!");
         });
- 
-        // Keyboard Event (Triggered when a key is pressed)
-        document.getElementById('keyboardInput').addEventListener('keydown', (event) => {
-            alert(`Key Pressed: ${event.key}`);
+
+        document.getElementById("mouseArea").addEventListener("mousemove", function(event) {
+            displayEventInfo(event);
         });
- 
-        // Focus Event (Triggered when an input field gains focus)
-        document.getElementById('focusInput').addEventListener('focus', () => {
-            alert('Input Focused!');
+
+        // Keyboard Events
+        document.getElementById("keyboardInput").addEventListener("keypress", function(event) {
+            displayEventInfo(event);
         });
- 
-        // Form Event (Triggered when a form is submitted)
-        document.getElementById('myForm').addEventListener('submit', (event) => {
-            event.preventDefault(); // Prevent actual form submission for demo
-            alert('Form Submitted!');
+
+        // Focus & Blur Events
+        document.getElementById("focusInput").addEventListener("focus", function(event) {
+            displayEventInfo(event);
+            alert("Input field focused!");
         });
- 
-        // Touch Event (Triggered when screen is touched)
-        document.getElementById('touchArea').addEventListener('touchstart', () => {
-            alert('Screen Touched!');
+
+        document.getElementById("focusInput").addEventListener("blur", function(event) {
+            displayEventInfo(event);
+            alert("Input field blurred!");
         });
- 
-        // Window Resize Event (Triggered when the window is resized)
-        window.addEventListener('resize', () => {
-            document.getElementById('resizeMessage').textContent = 'Window Resized!';
+
+        // Form Events
+        document.getElementById("sampleForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission for demonstration
+            displayEventInfo(event);
+            alert("Form submitted!");
         });
- 
-        // Network Event (Triggered when online or offline)
-        window.addEventListener('online', () => {
-            document.getElementById('networkStatus').textContent = 'Network status: Online';
+
+        // Window Events
+        document.getElementById("resizeButton").addEventListener("click", function() {
+            window.resizeTo(800, 600); // Resize window as a demonstration
         });
- 
-        window.addEventListener('offline', () => {
-            document.getElementById('networkStatus').textContent = 'Network status: Offline';
+
+        window.addEventListener("resize", function(event) {
+            displayEventInfo(event);
+            alert("Window resized!");
         });
- 
-        // Event to display notifications for other events
-        document.querySelectorAll('button, input').forEach(element => {
-            element.addEventListener('focus', () => {
-                document.getElementById('messageBox').textContent = 'Focused on an element!';
+
+        // Document Events
+        document.getElementById("DOMContentLoadedButton").addEventListener("click", function() {
+            document.addEventListener("DOMContentLoaded", function(event) {
+                displayEventInfo(event);
+                alert("DOM fully loaded and parsed!");
             });
- 
-            element.addEventListener('blur', () => {
-                document.getElementById('messageBox').textContent = 'Lost focus on an element!';
-            });
         });
+
     </script>
 </body>
 </html>
- 

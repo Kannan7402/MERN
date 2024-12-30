@@ -9,13 +9,12 @@
       display: flex;
       flex-direction: row; 
       justify-content: space-between; 
-      align-items: center;
+      align-items:center;
       height: 80px; 
       background-color: lightblue;
       padding: 10px; 
       text-align: center;
     }
- 
     .item {
       background-color: coral;
       padding: 15px;
@@ -33,6 +32,12 @@
     <div class="item">Item 2</div>
     <div class="item">Item 3</div>
   </div>
+  <button onclick="back()">back</button>
+  <script>
+    function back(){
+                history.back();
+            }
+  </script>
  
 </body>
 </html>

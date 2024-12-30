@@ -1,26 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Storage Demo</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-    </style>
 </head>
 <body>
     <h1>Welcome to the Web Storage Theme Example</h1>
     <button class="theme-button" id="themeToggle">Toggle Theme</button>
- 
-    <h1>Enter your name</h1>
+
+    <h2>Enter your name</h2>
     <input type="text" id="nameInput" placeholder="Your name">
-    <button onclick="saveName()">Save Name</button>
- 
+    <button id="saveButton">Save Name</button>
+
     <p><strong>Saved Name: </strong><span id="displayName">None</span></p>
- 
+
     <script>
         // Function to apply the theme
         function applyTheme() {
@@ -33,7 +27,6 @@
                 document.body.style.color = '#000';
             }
         }
- 
         // Event listener for the button to toggle theme
         document.getElementById('themeToggle').addEventListener('click', function() {
             let currentTheme = localStorage.getItem('theme');
@@ -44,20 +37,23 @@
             }
             applyTheme();
         });
- 
         // Apply the saved theme when the page loads
-        applyTheme()
- 
+        applyTheme();
+        // If a name is stored in sessionStorage, display it
         if (sessionStorage.getItem('name')) {
             document.getElementById('displayName').textContent = sessionStorage.getItem('name');
         }
- 
+
         // Function to save the name to sessionStorage
         function saveName() {
             const name = document.getElementById('nameInput').value;
-            sessionStorage.setItem('name', name);
-            document.getElementById('displayName').textContent = name;
+            if (name) {
+                sessionStorage.setItem('name', name);
+                document.getElementById('displayName').textContent = name;
+            }
         }
+        // Add event listener to the save button
+        document.getElementById('saveButton').addEventListener('click', saveName);
     </script>
 </body>
 </html>
