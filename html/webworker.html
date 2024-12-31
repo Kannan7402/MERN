@@ -1,30 +1,41 @@
 <!DOCTYPE html>
-<html>
-    <head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Worker Simple Example</title>
+</head>
+<body>
  
-    </head>
-    <body>
-        <p data-name="lokesh" id="name"></p>
-        <button onclick="createWorker()">create worker</button>
-        <button onclick="createshared()">create shared</button>
-        <script>
-            const ptag = document.getElementById('name');
-           console.log(ptag.dataset);
-            ptag.dataset
-        function createWorker(){
-                const worker = new Worker('worker.js');
-                worker.postMessage('hello');
-                worker.onmessage= ()=>{
-                    console.log(event.data);
-                }
-            }
-        function createshared(){
-            const shared = new SharedWorker('sharedworker.js');
-            shared.port.postMessage('hello');
-            shared.port.onmessage=(event)=>{
-                console.log(event.data);
-            }
+    <h1>Web Worker Example</h1>
+    <button id="startWorker">Start Worker</button>
+    <div id="result"></div>
+ 
+    <script>
+        if (window.Worker) {  // Check if Web Workers are supported
+            const worker = new Worker("../javascript/");  // Create a new Worker (points to worker.js)
+            // Button click event to start the worker
+            document.getElementById('startWorker').onclick = function() {
+                worker.postMessage('Hello, Worker!');  // Send message to worker
+            };
+
+            // Handle the message received from worker
+            // worker.onmessage = function(e) {
+            //     document.getElementById('result').textContent = e.data;  // Display worker's response
+            // };
+            worker.addEventListener('onmessage',()=>{
+                document.getElementById('result').textContent = e.data;
+            })
+            onmessage = function(e) {
+    postMessage('Received: ' + e.data); // Send response back to main thread
+};
+        } else {
+            console.log('Web Workers are not supported in this browser.');
         }
-        </script>
-    </body>
+    </script>
+ 
+</body>
 </html>
+
+ 
+ 
