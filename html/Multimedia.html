@@ -1,42 +1,48 @@
 <!DOCTYPE html>
 <html>
-    <title>MULTI MEDIA</title>
-    <head>
-        <h1>Multimedia and Embedding</h1>
-        <p> This shows how to use HTML to include multimedia in your web pages</p>
-        <hr>
-    </head>
-    <body>
-        <h2>IMAGE</h2>
-        <img loading="lazy"src="html_icon.jpg" width="100px" height="100px" title="html,css,js">
-        <p>Above image has the attribute loading - lazy,width and height 100px AND title html,css,js</p>
-        <h3>Image - Use Map attribute</h3>
-        <figure>
+<title>MULTI MEDIA</title>
+
+<head>
+    <h1>Multimedia and Embedding</h1>
+    <p> This shows how to use HTML to include multimedia in your web pages</p>
+    <hr>
+</head>
+
+<body>
+    <h2>IMAGE</h2>
+    <img loading="lazy" src="html_icon.jpg" width="100px" height="100px" title="html,css,js">
+    <p>Above image has the attribute loading - lazy,width and height 100px AND title html,css,js</p>
+    <h3>Image - Use Map attribute</h3>
+    <figure>
         <img src="html_icon.jpg" usemap="#image-map">
         <map name="image-map">
-          <area target="_blank" alt="html" title="html" href="https://www.w3schools.com/html/" coords="71,45,131,89" shape="rect">
-          <area target="_blank" alt="js" title="js" href="https://www.w3schools.com/js/default.asp" coords="54,119,84,158" shape="rect">
-          <area target="_blank" alt="css" title="css" href="https://www.w3schools.com/css/default.asp" coords="116,119,146,157" shape="rect">
+            <area target="_blank" alt="html" title="html" href="https://www.w3schools.com/html/" coords="71,45,131,89"
+                shape="rect">
+            <area target="_blank" alt="js" title="js" href="https://www.w3schools.com/js/default.asp"
+                coords="54,119,84,158" shape="rect">
+            <area target="_blank" alt="css" title="css" href="https://www.w3schools.com/css/default.asp"
+                coords="116,119,146,157" shape="rect">
         </map>
         <figcaption>Click specific image for their respective page</figcaption>
-        </figure>
-        <hr>
-        <h2>VIDEO</h2>
-        <video controls width="250px"disablepictureinpicture poster="html-js-css-icon-vector.jpg">
-            <source src="sample_video.mp4">
-        </video>
-        <p>Above video has controls width 250px and disabled picture in picture</p>
-        <p>used image as a poster</p>
-        <hr>
-        <h2>AUDIO</h2>
-        <audio controls muted >
-            <source src="sample_audio.mp3">
-        </audio>
-        <br>
-        <hr>
-        <h2>IFrame</h2>
-        <iframe src="create.html" id="el" allowfullscreen>
-        </iframe>
-        <script src="../javascript/basic.js"></script>
-    </body>
+    </figure>
+    <hr>
+    <h2>VIDEO</h2>
+    <video controls width="250px" disablepictureinpicture poster="html-js-css-icon-vector.jpg">
+        <source src="sample_video.mp4">
+    </video>
+    <p>Above video has controls width 250px and disabled picture in picture</p>
+    <p>used image as a poster</p>
+    <hr>
+    <h2>AUDIO</h2>
+    <audio controls muted>
+        <source src="sample_audio.mp3">
+    </audio>
+    <br>
+    <hr>
+    <h2>IFrame</h2>
+    <iframe src="create.html" id="el" allowfullscreen>
+    </iframe>
+    <script src="../javascript/basic.js"></script>
+</body>
+
 </html>

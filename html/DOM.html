@@ -1,99 +1,102 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>DOM</title>
-    </head>
-    <body>
-        <h1 id="head">DOM</h1>
-        <h2>GET ELEMENT BY ID</h2>
-        <p>Using get element by id which returns a element object which represents an html element</p>
-         <div>
-            <p id="message"></p>
-         </div>
-         <script>
-            let msg=document.getElementById("message");
-            console.log(msg);
-         </script>
-         <h2>GET ELEMENT BY NAME</h2>
-         <p>node list of all name input given </p>
-         <div>
-            <input type="radio" name="language" value="js">
-            <input type="radio" name="language" value="css">
-         </div>
-         <script>
-            let abc= document.getElementsByName("language");
-            console.log(abc);
-         </script>
-         <h2>GET ELEMENT BY TAG NAME</h2>
-         <p>collection of all paragraph tags</p>
-         <div>
-            <p>first</p>
-            <br>
-            <p>second</p>
-            <br>
-            <p>third</p>
-            <br>
-            <p>fourth</p>
-         </div>
-         <script>
-            let paragraph=document.getElementsByTagName("p");
-            console.log(paragraph);
-         </script>
-         <h2>GET ELEMENT BY CLASS NAME</h2>
-         <div>
-            <h4 class="kannan">first name</h4>
-            <h4 class="kannan">second name</h4>
-         </div>
-         <script>
-            let kan=document.getElementsByClassName("kannan");
-            console.log(kan);
-         </script>
-         <h2>QUERY SELECTOR</h2>
-         <h4 class="query">variable</h4>
-         <div id="container">
-            <h4 class="query">bala</h4>
-            <h4 class="query">dharun</h4>
-         </div>
-         <script>
-            let qu=document.querySelector(".query");
-            console.log(qu);
-            </script>
-            <h2>QUERY SELECTOR ALL</h2>
-                <h4 class="carry">variable</h4>
-                <div id="cont">
-                    <h4 class="carry">bala</h4>
-                    <h4 class="carry">dharun</h4>
-                </div>
-                <script>
-                    let ca=document.querySelectorAll(".carry");
-                    console.log(ca);
-                </script>
-                <h3>Selecting parent element</h3>
-                <div class="title">
-                    <p>welcome</p>
-                    <p class="text">to aspire</p>
-                </div>
-                <script>
-                    let txt = document.querySelector(".text");
-                    console.log(txt.parentNode);
-                </script>
-                <br>
-                <!--child node-->
-                <script>
-                    let parent = document.querySelector(".title");
-                    console.log(parent.firstElementChild);
-                </script>
-                <!---->
-                <script>
-                    let second = document.querySelector(".text");
-                    console.log(second.previousElementSibling);
-                </script>
-                <script>
-                    let para = document.getElementById("head");
-                    const ptag = document.createElement("p");
-                    ptag.innerHTML = "<p>This para was created by createElement</p>";
-                    para.appendChild(ptag);
-                    
-                </script>
-    </body>
+
+<head>
+    <title>DOM</title>
+</head>
+
+<body>
+    <h1 id="head">DOM</h1>
+    <h2>GET ELEMENT BY ID</h2>
+    <p>Using get element by id which returns a element object which represents an html element</p>
+    <div>
+        <p id="message"></p>
+    </div>
+    <script>
+        let msg = document.getElementById("message");
+        console.log(msg);
+    </script>
+    <h2>GET ELEMENT BY NAME</h2>
+    <p>node list of all name input given </p>
+    <div>
+        <input type="radio" name="language" value="js">
+        <input type="radio" name="language" value="css">
+    </div>
+    <script>
+        let abc = document.getElementsByName("language");
+        console.log(abc);
+    </script>
+    <h2>GET ELEMENT BY TAG NAME</h2>
+    <p>collection of all paragraph tags</p>
+    <div>
+        <p>first</p>
+        <br>
+        <p>second</p>
+        <br>
+        <p>third</p>
+        <br>
+        <p>fourth</p>
+    </div>
+    <script>
+        let paragraph = document.getElementsByTagName("p");
+        console.log(paragraph);
+    </script>
+    <h2>GET ELEMENT BY CLASS NAME</h2>
+    <div>
+        <h4 class="kannan">first name</h4>
+        <h4 class="kannan">second name</h4>
+    </div>
+    <script>
+        let kan = document.getElementsByClassName("kannan");
+        console.log(kan);
+    </script>
+    <h2>QUERY SELECTOR</h2>
+    <h4 class="query">variable</h4>
+    <div id="container">
+        <h4 class="query">bala</h4>
+        <h4 class="query">dharun</h4>
+    </div>
+    <script>
+        let qu = document.querySelector(".query");
+        console.log(qu);
+    </script>
+    <h2>QUERY SELECTOR ALL</h2>
+    <h4 class="carry">variable</h4>
+    <div id="cont">
+        <h4 class="carry">bala</h4>
+        <h4 class="carry">dharun</h4>
+    </div>
+    <script>
+        let ca = document.querySelectorAll(".carry");
+        console.log(ca);
+    </script>
+    <h3>Selecting parent element</h3>
+    <div class="title">
+        <p>welcome</p>
+        <p class="text">to aspire</p>
+    </div>
+    <script>
+        let txt = document.querySelector(".text");
+        console.log(txt.parentNode);
+    </script>
+    <br>
+    <!--child node-->
+    <script>
+        let parent = document.querySelector(".title");
+        console.log(parent.firstElementChild);
+    </script>
+    <!---->
+    <script>
+        let second = document.querySelector(".text");
+        console.log(second.previousElementSibling);
+    </script>
+    <script>
+        let para = document.getElementById("head");
+        const ptag = document.createElement("p");
+        ptag.innerHTML = "<p>This para was created by createElement</p>";
+        para.appendChild(ptag);
+
+    </script>
+</body>
+
 </html>

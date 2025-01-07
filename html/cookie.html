@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,7 @@
             d.setTime(d.getTime() + (minutes * 60 * 1000));  // Set expiration time in milliseconds
             let expires = "expires=" + d.toUTCString();  // Format expiration date to UTC string
             document.cookie = name + "=" + value + ";" + expires + ";path=/";  // Set cookie with path to '/' for accessibility on the whole site
-        }   
+        }
         // Function to get a cookie by name
         function getCookie(name) {
             let nameEq = name + "=";
@@ -47,10 +48,12 @@
         }
     </script>
 </head>
+
 <body onload="checkCookie()">
     <h1>Welcome to the Cookie Example!</h1>
     <p>This page checks if you have a saved cookie with your name.</p>
     <!-- Button to delete cookie -->
     <button onclick="deleteCookie('username')">Delete Cookie</button>
 </body>
+
 </html>

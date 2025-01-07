@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,11 +12,13 @@
             border: 1px solid #ccc;
             background-color: #f9f9f9;
         }
+
         #eventInfo p {
             margin: 5px 0;
         }
     </style>
 </head>
+
 <body>
     <h1>HTML Events Demonstration</h1>
 
@@ -79,56 +82,56 @@
         }
 
         // Mouse Events
-        document.getElementById("clickButton").addEventListener("click", function(event) {
+        document.getElementById("clickButton").addEventListener("click", function (event) {
             displayEventInfo(event);
             alert("Button clicked!");
         });
 
-        document.getElementById("dblClickButton").addEventListener("dblclick", function(event) {
+        document.getElementById("dblClickButton").addEventListener("dblclick", function (event) {
             displayEventInfo(event);
             alert("Button double-clicked!");
         });
 
-        document.getElementById("mouseArea").addEventListener("mousemove", function(event) {
+        document.getElementById("mouseArea").addEventListener("mousemove", function (event) {
             displayEventInfo(event);
         });
 
         // Keyboard Events
-        document.getElementById("keyboardInput").addEventListener("keypress", function(event) {
+        document.getElementById("keyboardInput").addEventListener("keypress", function (event) {
             displayEventInfo(event);
         });
 
         // Focus & Blur Events
-        document.getElementById("focusInput").addEventListener("focus", function(event) {
+        document.getElementById("focusInput").addEventListener("focus", function (event) {
             displayEventInfo(event);
             alert("Input field focused!");
         });
 
-        document.getElementById("focusInput").addEventListener("blur", function(event) {
+        document.getElementById("focusInput").addEventListener("blur", function (event) {
             displayEventInfo(event);
             alert("Input field blurred!");
         });
 
         // Form Events
-        document.getElementById("sampleForm").addEventListener("submit", function(event) {
+        document.getElementById("sampleForm").addEventListener("submit", function (event) {
             event.preventDefault(); // Prevent form submission for demonstration
             displayEventInfo(event);
             alert("Form submitted!");
         });
 
         // Window Events
-        document.getElementById("resizeButton").addEventListener("click", function() {
+        document.getElementById("resizeButton").addEventListener("click", function () {
             window.resizeTo(800, 600); // Resize window as a demonstration
         });
 
-        window.addEventListener("resize", function(event) {
+        window.addEventListener("resize", function (event) {
             displayEventInfo(event);
             alert("Window resized!");
         });
 
         // Document Events
-        document.getElementById("DOMContentLoadedButton").addEventListener("click", function() {
-            document.addEventListener("DOMContentLoaded", function(event) {
+        document.getElementById("DOMContentLoadedButton").addEventListener("click", function () {
+            document.addEventListener("DOMContentLoaded", function (event) {
                 displayEventInfo(event);
                 alert("DOM fully loaded and parsed!");
             });
@@ -136,4 +139,5 @@
 
     </script>
 </body>
+
 </html>

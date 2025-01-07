@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Storage Demo</title>
 </head>
+
 <body>
     <h1>Welcome to the Web Storage Theme Example</h1>
     <button class="theme-button" id="themeToggle">Toggle Theme</button>
-
     <h2>Enter your name</h2>
     <input type="text" id="nameInput" placeholder="Your name">
     <button id="saveButton">Save Name</button>
-
     <p><strong>Saved Name: </strong><span id="displayName">None</span></p>
-
     <script>
         // Function to apply the theme
         function applyTheme() {
@@ -28,7 +27,7 @@
             }
         }
         // Event listener for the button to toggle theme
-        document.getElementById('themeToggle').addEventListener('click', function() {
+        document.getElementById('themeToggle').addEventListener('click', function () {
             let currentTheme = localStorage.getItem('theme');
             if (currentTheme === 'dark') {
                 localStorage.setItem('theme', 'light');
@@ -56,4 +55,5 @@
         document.getElementById('saveButton').addEventListener('click', saveName);
     </script>
 </body>
+
 </html>

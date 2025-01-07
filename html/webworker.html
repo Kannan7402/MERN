@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Worker Simple Example</title>
 </head>
+
 <body>
- 
+
     <h1>Web Worker Example</h1>
     <button id="startWorker">Start Worker</button>
     <div id="result"></div>
- 
+
     <script>
         if (window.Worker) {  // Check if Web Workers are supported
             const worker = new Worker("../javascript/");  // Create a new Worker (points to worker.js)
             // Button click event to start the worker
-            document.getElementById('startWorker').onclick = function() {
+            document.getElementById('startWorker').onclick = function () {
                 worker.postMessage('Hello, Worker!');  // Send message to worker
             };
 
@@ -23,19 +25,17 @@
             // worker.onmessage = function(e) {
             //     document.getElementById('result').textContent = e.data;  // Display worker's response
             // };
-            worker.addEventListener('onmessage',()=>{
+            worker.addEventListener('onmessage', () => {
                 document.getElementById('result').textContent = e.data;
             })
-            onmessage = function(e) {
-    postMessage('Received: ' + e.data); // Send response back to main thread
-};
+            onmessage = function (e) {
+                postMessage('Received: ' + e.data); // Send response back to main thread
+            };
         } else {
             console.log('Web Workers are not supported in this browser.');
         }
     </script>
- 
-</body>
-</html>
 
- 
- 
+</body>
+
+</html>
