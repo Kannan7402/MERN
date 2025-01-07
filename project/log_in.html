@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in / Sign up</title>
+    <link rel="icon" type="image/x-icon"
+        href="https://th.bing.com/th?q=Shopping+Cart+Clip+Art+Free&w=120&h=120&c=1&rs=1&qlt=90&cb=1&dpr=1.5&pid=InlineBlock&mkt=en-IN&cc=IN&setlang=en&adlt=moderate&t=1&mw=247">
+    <link href="../log_in.css" rel="stylesheet">
+</head>
+<body>
+    <h1 class="heading">
+        Shopping Cart
+    </h1>
+    <p class="para">Shopping cart for purchasing various products</p>
+    <h2>Login-Form</h2>
+    <form  onsubmit="handleSubmit(event)" >
+        <img id="image"
+            src="https://th.bing.com/th?id=OIP.l54ICAiwopa2RCt7J2URWwHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2">
+        <br>
+        <label for="username" class="label"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" class="input" id="username" name="username" required>
+        <br>
+        <label for="password" class="label"><b>Password</b></label>
+        <input type="password" placeholder="Kannan1!" class="input" id="password" pattern="^(?=.*\d)(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9])\S{8,}$" 
+        title="Password must contain at least one letter, one digit, one special character, and no spaces. Minimum length is 8 characters."
+        name="password" required>
+        <br>
+        <button type="submit" class="allls">Login</button>
+        <a href="../signin.html">Sign up</a>
+    </form>
+    <script>
+        let userstring = localStorage.getItem("o");
+        userobject=JSON.parse(userstring);
+        console.log(userobject);
+      function handleSubmit(event)
+      {
+        event.preventDefault();
+        if (document.getElementById('username').value === userobject.uname && document.getElementById('password').value === userobject.pss)
+      {
+        window.location.href="e-com.html";
+      }
+      else{
+        alert("sign in first");
+      }
+    }
+    </script>
+</body>
+</html>

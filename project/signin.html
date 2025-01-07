@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-up</title>
+    <link rel="stylesheet" href="../sigin.css">
+</head>
+<body>
+    <script>
+        function validate(event) {
+            let name = document.getElementById("input").value;
+            let create = document.getElementById("create").value;
+            let reenter = document.getElementById("reenter").value;
+            event.preventDefault();
+            // Check if the passwords match
+            if (create === reenter) {
+                let o={
+                    uname:name,
+                    pss:reenter
+                }
+                 localStorage.setItem("o", JSON.stringify(o)); 
+                // Submit the form
+               window.location.assign('log_in.html');
+               // This can now submit the form
+            } else {
+                alert("Passwords do not match");
+                event.preventDefault(); // Prevent form submission if passwords don't match
+            }
+        }
+    </script>
+
+    <h1>Sign-up</h1>
+    <div class="container">
+        <form id="formdata" onsubmit="validate(event)">
+            <label for="username" class="label"><b>Username</b></label>
+            <input type="text" placeholder="Enter your email" id="input" name="username" pattern=".+@example\.com" required><br>
+            
+            <label for="create_pass" class="label"><b>Create Password</b></label>
+            <input type="password" placeholder="Kannan1!" class="input" id="create" pattern="^(?=.*\d)(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9])\S{8,}$" 
+                title="Password must contain at least one letter, one digit, one special character, and no spaces. Minimum length is 8 characters."
+                name="create_password" required><br>
+            
+            <label for="re-enter_pass" class="label"><b>Re-enter Password</b></label>
+            <input type="password" placeholder="Kannan1!" class="input" id="reenter" pattern="^(?=.*\d)(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9])\S{8,}$" 
+                title="Password must contain at least one letter, one digit, one special character, and no spaces. Minimum length is 8 characters."
+                name="reenter_password" required><br>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

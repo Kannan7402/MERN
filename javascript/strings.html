@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+</head>
+
+<body>
+    <h1 style="text-align: center;">String operations in JS</h1>
+    <div id="content">
+        <label for="text" placeholder="enter text">Type text</label>
+        <input type="text" id="input">
+        <button id="btn" onclick="ging()">click</button>
+    </div>
+    <script>
+        function ging()
+        {
+        name = document.getElementById("input").value;
+        length = name.length;
+        const l=document.createElement("p");
+        l.innerHTML+= length;
+        document.body.append(l);
+        //document.getElementById("content").textContent = '';
+    }
+    </script>
+</body>
+
+</html>
