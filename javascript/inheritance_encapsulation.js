@@ -5,9 +5,12 @@ class person{
         this.name='kannan';
         this.#age=22;
     }
-    getAge(){
+    setAge()
+    {
+        this.#age=25;
         return this.#age;
     }
+
 }
 class student extends person {
     constructor()
@@ -17,7 +20,7 @@ class student extends person {
         this.class='a';
         this.greet=()=>
         {
-            console.log(`${this.name} is ${this.getAge()} `);
+            console.log(`${this.name} is ${this.setAge()} and ${this.mark} `);
         }
     }
 }
