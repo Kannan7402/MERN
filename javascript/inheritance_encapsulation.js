@@ -1,7 +1,6 @@
 class person{
     #age;
-    constructor(){
-        
+    constructor(){  
         this.name='kannan';
         this.#age=22;
     }
@@ -10,7 +9,6 @@ class person{
         this.#age=25;
         return this.#age;
     }
-
 }
 class student extends person {
     constructor()

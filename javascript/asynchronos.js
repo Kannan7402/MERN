@@ -92,7 +92,14 @@
 // }finally{
 //   console.log('ok');
 // }
-//array operations
-const arr = ['a','v','b','c'];
-arr1=arr.copyWithin('a',1,2);
-console.log(arr1);
+
+// interval 
+//     let count = 0;
+//    const myinterval =  setInterval(()=>
+// {
+//   console.log(count +"is count");
+//   count++;
+// if(count>=5)
+// {
+//     clearInterval(myinterval);
+// }},2000);
