@@ -30,25 +30,26 @@
                 <img class="image"src="https://th.bing.com/th/id/R.656ee65914800737e94d13f16477503f?rik=OviLKBhj70CWGg&riu=http%3a%2f%2fwww.bhphotovideo.com%2fimages%2fimages1000x1000%2fhuawei_55020539_watch_smartwatch_black_stainless_1194624.jpg&ehk=bl%2fUtUFhfWMSWzxlex7bDY1Wlylsqt1z5WX%2fDA3tsk0%3d&risl=&pid=ImgRaw&r=0" alt="Watch">
                 <h3>Watch</h3>
                 <p>$29.99</p>
-                <button>Add to Cart</button>
+                <button class="btn btn-1">Add to Cart</button>
             </div>
             <div class="product-card">
                 <img class="image" src="https://th.bing.com/th/id/OIP.ACVEBS64VruegTeNCZ30HAHaIc?rs=1&pid=ImgDetMain" alt="Tab">
                 <h3>Tablet</h3>
                 <p>$39.99</p>
-                <button>Add to Cart</button>    
+                <button class="btn btn-2">Add to Cart</button>    
             </div>
             <div class="product-card">
                 <img class="image" src="https://th.bing.com/th/id/OIP.Kqcui3qznL6aAr0i9tr_GgHaHa?w=188&h=188&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="Laptop" style="margin-top: 10px;">
                 <h3>Laptop</h3>
                 <p>$49.99</p>
-                <button>Add to Cart</button>
+                <button class="btn btn-3">Add to Cart</button>
             </div>
             <div class="product-card">
                 <img class="image" src="https://th.bing.com/th/id/R.9928de616bcd41d128c8d72c2cb8b2cf?rik=jK1TUzJ2U4NmHA&riu=http%3a%2f%2fpowermaccenter.com%2fcdn%2fshop%2ffiles%2fiPhone_15_Pro_Max_Natural_Titanium_PDP_Image_Position-1__en-US_3295c924-7c21-417d-870c-32bee7f1e310.jpg%3fv%3d1695861436&ehk=%2fXKRTQlkbXyLRd5nMNtO0IMohTCHKAz1Bn%2bge2Q9ttQ%3d&risl=&pid=ImgRaw&r=0" alt="Iphone">
                 <h3>Iphone</h3>
                 <p>$59.99</p>
-                <button>Add to Cart</button>
+                <button class="btn btn-4">Add to Cart</button>
+                <button id="checkout">checkout</button>
             </div>
         </div>
     </main>
@@ -56,6 +57,62 @@
     <footer>
         <p>&copy; 2025 E-Commerce Store. All rights reserved.</p>
     </footer>
+    <script>
+        // Select all 'Add to Cart' buttons
+const btn1 = document.querySelector('.btn-1');
+const btn2 = document.querySelector('.btn-2');
+const btn3 = document.querySelector('.btn-3');
+const btn4 = document.querySelector('.btn-4');
+const checktotal = document.getElementById('checkout');
+const btnall = document.querySelectorAll('.btn');
+
+let btn1count = 0;
+let btn2count = 0;
+let btn3count = 0;
+let btn4count = 0;
+let amount=0;
+let totalAmount=0;
+
+btn1.addEventListener('click',()=>{
+    btn1count=btn1count+1;
+    btn1.textContent=btn1count;
+})
+
+btn2.addEventListener('click',()=>{
+    btn2count=btn2count+1;
+    btn2.textContent=btn2count;
+})
+
+btn3.addEventListener('click',()=>{
+    btn3count=btn3count+1;
+    btn3.textContent=btn3count;
+})
+
+btn4.addEventListener('click',()=>{
+    btn4count=btn4count+1;
+    btn4.textContent=btn4count;
+})
+
+// Initialize cart count
+let cartCount = 0;
+
+// Function to update the cart count
+function updateCartCount() {
+    document.getElementById('cart-count').textContent = cartCount;
+}
+
+// Add event listeners to all buttons
+
+checktotal.addEventListener('click', () => {
+    // Calculate the total cost based on the number of items added
+    totalAmount = (btn1count * 29.99) + (btn2count * 39.99) + (btn3count * 49.99) + (btn4count * 59.99);
+    
+    // Show the total amount in the alert
+    alert(`Total Amount: $${totalAmount.toFixed(2)}`);
+});
+console.log(totalAmount);
+
+</script>
 </body>
 
 </html>

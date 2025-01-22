@@ -36,19 +36,19 @@ function identity(name1,age){
 const newPerson = new identity('lokesh',23);
 newPerson.greet();
 
-const newValue = Object.create({
-    name2:'lokesh',
-    age:23,
-})
+// const newValue = Object.create({
+//     name2:'lokesh',
+//     age:23,
+// })
 
-delete newValue.age;
+// delete newValue.age;
 
-const erer ={
-    name:'kannan',
-    age:23,
-    gender:'male',
-}
+// const erer ={
+//     name:'kannan',
+//     age:23,
+//     gender:'male',
+// }
 
-delete erer.gender;
+// delete erer.gender;
 
-console.log(erer);
+// console.log(erer);

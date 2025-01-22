@@ -1,49 +1,184 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>REVIEW ASSIGNMENT</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width",initial-scale=1.0>
-        <style>
-            h1,
-            p {
-                text-align: center;
-                padding: 10px;
-            }
-    
-            h1 {
-                text-decoration: underline;
-            }
-    
-            .image-container {
-                overflow-x: scroll;
-                white-space: nowrap;
-                padding: 10px 0;
-            }
-    
-            .image-container img {
-                width: 200px;
-                height: 150px;
-                margin-right: 10px;
-            }
-        </style>
-    </head>
-    <body>
-        <h1> HTML & CSS Review Assignment - Horizontal Overflow</h1>
-        <p>To create a webpage which has 10 images. The user needs to scroll through horizontal axis to access all the
-            images. </p>
-                <div class="image-container">
-                <img src="https://media.istockphoto.com/id/1317323736/photo/a-view-up-into-the-trees-direction-sky.webp?b=1&s=612x612&w=0&k=20&c=8xbZvMyptEaqMW46diKakhVgkPkAzBi5l7J1yveCZFk=" alt="image-1" class="img">
-                <img src="https://media.istockphoto.com/id/1317323736/photo/a-view-up-into-the-trees-direction-sky.webp?b=1&s=612x612&w=0&k=20&c=8xbZvMyptEaqMW46diKakhVgkPkAzBi5l7J1yveCZFk=" alt="image-2" class="img">
-                <img src="https://media.istockphoto.com/id/1317323736/photo/a-view-up-into-the-trees-direction-sky.webp?b=1&s=612x612&w=0&k=20&c=8xbZvMyptEaqMW46diKakhVgkPkAzBi5l7J1yveCZFk=" alt="image-3" class="img">
-                <img src="https://media.istockphoto.com/id/1317323736/photo/a-view-up-into-the-trees-direction-sky.webp?b=1&s=612x612&w=0&k=20&c=8xbZvMyptEaqMW46diKakhVgkPkAzBi5l7J1yveCZFk=" alt="image-4" class="img">
-                <img src="https://media.istockphoto.com/id/1317323736/photo/a-view-up-into-the-trees-direction-sky.webp?b=1&s=612x612&w=0&k=20&c=8xbZvMyptEaqMW46diKakhVgkPkAzBi5l7J1yveCZFk=" alt="image-5" class="img">
-                <img src="https://media.istockphoto.com/id/1317323736/photo/a-view-up-into-the-trees-direction-sky.webp?b=1&s=612x612&w=0&k=20&c=8xbZvMyptEaqMW46diKakhVgkPkAzBi5l7J1yveCZFk=" alt="image-6" class="img">
-                <img src="https://media.istockphoto.com/id/1317323736/photo/a-view-up-into-the-trees-direction-sky.webp?b=1&s=612x612&w=0&k=20&c=8xbZvMyptEaqMW46diKakhVgkPkAzBi5l7J1yveCZFk=" alt="image-7" class="img">
-                <img src="https://media.istockphoto.com/id/1317323736/photo/a-view-up-into-the-trees-direction-sky.webp?b=1&s=612x612&w=0&k=20&c=8xbZvMyptEaqMW46diKakhVgkPkAzBi5l7J1yveCZFk=" alt="image-8" class="img">
-                <img src="https://media.istockphoto.com/id/1317323736/photo/a-view-up-into-the-trees-direction-sky.webp?b=1&s=612x612&w=0&k=20&c=8xbZvMyptEaqMW46diKakhVgkPkAzBi5l7J1yveCZFk=" alt="image-9" class="img">
-                <img src="https://media.istockphoto.com/id/1317323736/photo/a-view-up-into-the-trees-direction-sky.webp?b=1&s=612x612&w=0&k=20&c=8xbZvMyptEaqMW46diKakhVgkPkAzBi5l7J1yveCZFk=" alt="image-10" class="img">
-                </div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple E-commerce Website</title>
+</head>
+<body>
+
+    <style>
+        /* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and background */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header styles */
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.cart button {
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.cart button:hover {
+    background-color: #005f6a;
+}
+
+/* Main section with products */
+main {
+    padding: 20px;
+}
+
+.product-list {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    text-align: center;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.product h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.product p {
+    font-size: 16px;
+    color: #555;
+}
+
+.add-to-cart-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #45a049;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+    </style>
+    <!-- Header with Cart -->
+    <header>
+        <div class="navbar">
+            <div class="logo">My Shop</div>
+            <div class="cart">
+                <button id="cart-btn">Cart (<span id="cart-count">0</span>)</button>
             </div>
-    </head>
+        </div>
+    </header>
+
+    <!-- Product Listing -->
+    <main>
+        <div class="product-list">
+            <div class="product">
+                <img src="https://via.placeholder.com/150" alt="Product 1">
+                <h3>Product 1</h3>
+                <p>$20</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/150" alt="Product 2">
+                <h3>Product 2</h3>
+                <p>$25</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/150" alt="Product 3">
+                <h3>Product 3</h3>
+                <p>$30</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/150" alt="Product 4">
+                <h3>Product 4</h3>
+                <p>$15</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 My Shop</p>
+    </footer>
+
+    <script>
+        // Select all 'Add to Cart' buttons
+const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+
+// Initialize cart count
+let cartCount = 0;
+
+// Function to update the cart count
+function updateCartCount() {
+    document.getElementById('cart-count').textContent = cartCount;
+}
+
+// Add event listeners to all buttons
+addToCartButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        cartCount++;  // Increment cart count
+        updateCartCount();  // Update the cart display
+        alert('Item added to cart!');
+    });
+});
+document.getElementById(cart-btn)
+    </script>
+</body>
 </html>

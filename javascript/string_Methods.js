@@ -1,0 +1,16 @@
+const str = 'kannan';
+const str1= 'hi';
+let str3 = str.concat(" ",str1);
+console.log(str.split(""));
+console.log(str3);
+let len = str.length;
+console.log(len);
+console.log(str1.includes('k'));
+console.log(str1.charAt(1));
+console.log(str.charCodeAt(1));
+hello = str1.endsWith('i');
+console.log(hello);
+hel = str1.startsWith('i');
+console.log(hel);
+console.log(str.slice(1,4));
+console.log(str.toUpperCase());
