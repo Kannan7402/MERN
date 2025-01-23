@@ -16,7 +16,7 @@
 // console.log(person3);
 
 
-// object prototype
+//object prototype
 function person(name , age)
 {
     this.name=name;
@@ -36,7 +36,5 @@ let even = array.filter(x=>x%2==0);
 console.log(even);
 let multi = array.map(x=>x*2)
 console.log(multi);
-let sum= array.reduce(x=>x+total,0);
+let sum= array.reduce((x,a)=>x+a,0);
 console.log(sum);
-
-
