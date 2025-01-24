@@ -1,0 +1,22 @@
+[{
+    "name":"watch",
+    "price":30,
+    "image":"https://th.bing.com/th/id/R.656ee65914800737e94d13f16477503f?rik=OviLKBhj70CWGg&riu=http%3a%2f%2fwww.bhphotovideo.com%2fimages%2fimages1000x1000%2fhuawei_55020539_watch_smartwatch_black_stainless_1194624.jpg&ehk=bl%2fUtUFhfWMSWzxlex7bDY1Wlylsqt1z5WX%2fDA3tsk0%3d&risl=&pid=ImgRaw&r=0"
+
+},
+{
+    "name":"ipad",
+    "price":60,
+    "image":"https://th.bing.com/th/id/OIP.ACVEBS64VruegTeNCZ30HAHaIc?rs=1&pid=ImgDetMain"
+},
+{
+    "name":"laptop",
+    "price":90,
+    "image":"https://th.bing.com/th/id/OIP.Kqcui3qznL6aAr0i9tr_GgHaHa?w=188&h=188&c=7&r=0&o=5&dpr=1.5&pid=1.7"
+},
+{
+    "name":"iphone",
+    "price":100,
+    "image":"https://th.bing.com/th/id/R.9928de616bcd41d128c8d72c2cb8b2cf?rik=jK1TUzJ2U4NmHA&riu=http%3a%2f%2fpowermaccenter.com%2fcdn%2fshop%2ffiles%2fiPhone_15_Pro_Max_Natural_Titanium_PDP_Image_Position-1__en-US_3295c924-7c21-417d-870c-32bee7f1e310.jpg%3fv%3d1695861436&ehk=%2fXKRTQlkbXyLRd5nMNtO0IMohTCHKAz1Bn%2bge2Q9ttQ%3d&risl=&pid=ImgRaw&r=0"
+}
+]

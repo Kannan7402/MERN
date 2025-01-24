@@ -32,8 +32,9 @@
 
     <script>
         // Retrieve the user data stored during signup
-        let userstring = localStorage.getItem("o");
+        let userstring = localStorage.getItem("user");
         let userobject = JSON.parse(userstring);
+        console.log(userobject);
 
         // Form submission handler
         function handleSubmit(event) {
@@ -52,7 +53,7 @@
             // Username and password validation
             if (enteredUsername === userobject.uname && enteredPassword === userobject.pss) {
                 // Password matches and username matches
-                window.location.href = "e-com.html"; // Redirect to the main page
+                window.location.href = "e-com.html"; // Redirect to the main page   
             } else {
                 // Validation error - show an alert
                 alert("Invalid username or password. Please try again.");
