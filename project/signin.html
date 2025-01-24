@@ -9,24 +9,49 @@
 <body>
     <script>
         function validate(event) {
+            // Get form field values
             let name = document.getElementById("input").value;
             let create = document.getElementById("create").value;
             let reenter = document.getElementById("reenter").value;
+            
+            // Reset any previous error messages
+            let errorMessage = '';
+            
+            // Prevent form submission
             event.preventDefault();
-            // Check if the passwords match
-            if (create === reenter) {
-                let o={
-                    uname:name,
-                    pss:reenter
-                }
-                 localStorage.setItem("o", JSON.stringify(o)); 
-                // Submit the form
-               window.location.assign('login.html');    
-               // This can now submit the form
-            } else {
-                alert("Passwords do not match");
-                event.preventDefault(); // Prevent form submission if passwords don't match
+            
+            // Check if the email is valid (for now just checking for the @example.com domain)
+            let emailPattern = /.+@example\.com/;
+            if (!emailPattern.test(name)) {
+                errorMessage += "Please enter a valid email ending with @example.com.\n";
             }
+            
+            // Check if the passwords match
+            if (create !== reenter) {
+                errorMessage += "Passwords do not match.\n";
+            }
+            
+            // Password strength validation (Using the pattern in JS as well)
+            let passwordPattern = /^(?=.*\d)(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9])\S{8,}$/;
+            if (!passwordPattern.test(create)) {
+                errorMessage += "Password must contain at least one letter, one digit, one special character, and no spaces. Minimum length is 8 characters.\n";
+            }
+
+            // If there's any validation error, show it and stop submission
+            if (errorMessage) {
+                alert(errorMessage);
+                return false;
+            }
+
+            // If no errors, store data in localStorage
+            let userObj = {
+                uname: name,
+                pss: reenter
+            };
+            localStorage.setItem("user", JSON.stringify(userObj));
+
+            // Redirect to the login page
+            window.location.assign('login.html');    
         }
     </script>
 
@@ -37,14 +62,15 @@
             <input type="email" placeholder="Enter your email" id="input" name="username" pattern=".+@example\.com" required><br>
             
             <label for="create_pass" class="label"><b>Create Password</b></label>
-            <input type="password" placeholder="enter password" class="input" id="create" pattern="^(?=.*\d)(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9])\S{8,}$" 
+            <input type="password" placeholder="Enter password" class="input" id="create" pattern="^(?=.*\d)(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9])\S{8,}$" 
                 title="Password must contain at least one letter, one digit, one special character, and no spaces. Minimum length is 8 characters."
                 name="create_password" required><br>
             
             <label for="re-enter_pass" class="label"><b>Re-enter Password</b></label>
-            <input type="password" placeholder="enter password" class="input" id="reenter" pattern="^(?=.*\d)(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9])\S{8,}$" 
+            <input type="password" placeholder="Re-enter password" class="input" id="reenter" pattern="^(?=.*\d)(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9])\S{8,}$" 
                 title="Password must contain at least one letter, one digit, one special character, and no spaces. Minimum length is 8 characters."
                 name="reenter_password" required><br>
+            
             <button type="submit">Submit</button>
         </form>
     </div>

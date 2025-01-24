@@ -1,5 +1,5 @@
 const promise = new Promise((resolve,reject)=>{
-    let x=2;
+    let x=1;
     if(x==1){
         resolve(setTimeout(()=>{
             console.log("wait 3seconds");

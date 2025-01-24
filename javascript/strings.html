@@ -13,8 +13,17 @@
         <label for="text" placeholder="enter text">Type text</label>
         <input type="text" id="input">
         <button id="btn" onclick="ging()">click</button>
+        <ul id="unorder">
+            <li>hi</li>
+            <li>bye</li>
+        </ul>
     </div>
     <script>
+        const list = document.getElementById("unorder");
+        list.addEventListener('click',function()
+    {
+        alert("hi");
+    })
         function ging()
         {
         name = document.getElementById("input").value;
@@ -22,7 +31,7 @@
         const l=document.createElement("p");
         l.innerHTML+= length;
         document.body.append(l);
-        //document.getElementById("content").textContent = '';
+        //document.getElementById("content").textContent += '';
     }
     </script>
 </body>

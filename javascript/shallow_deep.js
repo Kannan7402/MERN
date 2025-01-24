@@ -1,5 +1,4 @@
 // shallow vs deep
-
 // shallow
 
 let original1 = {

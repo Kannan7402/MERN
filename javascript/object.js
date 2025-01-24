@@ -37,7 +37,7 @@ const newPerson = new identity('lokesh',23);
 newPerson.greet();
 
 // const newValue = Object.create({
-//     name2:'lokesh',
+//     name2:'kannan',
 //     age:23,
 // })
 
