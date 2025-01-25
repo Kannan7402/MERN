@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import Display from './components/jsx_intor'
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Hello World
+          <Display/>
         </p>
         <a
           className="App-link"
