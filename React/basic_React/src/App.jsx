@@ -1,21 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import Display from './components/functional'
-import Mydis from './components/class'
+import Displayof from './components/intro'
+import Parent from './components/Parent'
+import Increase from './components/hooks'
+import Login from './components/Conditoin'
+import Day from './components/switch'
+import List from './components/lists'
+import MultiInputForm from './components/forms'
 function App() {
   return (
     <>
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-        <Display/>
-        <Mydis/>
+        <Displayof name={'react'}/>
+        <Parent/>
+        <Increase/>
+        <Login/>
+        <Day/>
+        <List/>
+        <MultiInputForm/>
       </div>
     </>
   )
