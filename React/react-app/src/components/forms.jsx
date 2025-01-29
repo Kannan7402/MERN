@@ -1,40 +1,51 @@
-import React, { useState } from 'react';
+import React, { useId, useRef, useState } from 'react';
 const FormComponent = () => {
   const [formData, setFormData] = useState({
     username: '',
     email: '',
+    phone : ''
   });
   const [errors, setErrors] = useState({
     username: '',
     email: '',
+    phone : '',
   });
+
+  const usernameRef = useRef(null);
+  const usernameId = useId();
+  
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+
     setFormData({
       ...formData,
       [name]: value,
     });
   };
-  const validateForm = () => {
+  const validateForm = (e) => {
     const newErrors = {};
     if (!formData.username) {
-      newErrors.username = 'Username is required';
+      usernameRef.current.focus();
+      e.preventDefault();
     }
     if (!formData.email) {
       newErrors.email = 'Email is required';
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = 'Email is invalid';
     }
+    if (!formData.phone) {
+      newErrors.phone = 'Phone number is required';
+    } else if (!/^\d{10}$/.test(formData.phone)) {
+      newErrors.phone = 'Phone number must be 10 digits';
+    }
     setErrors(newErrors);
 
-    return Object.keys(newErrors).length === 0; // If no errors, return true
+    return Object.keys(newErrors).length === 0;
   };
   const handleSubmit = (e) => {
-    e.preventDefault(); // Prevent form submission to avoid page reload
-    if (validateForm()) {
+    e.preventDefault(); 
+    if (validateForm(e)) {
       alert('Form submitted successfully');
-    } else {
-      alert('Please fix the errors');
     }
   };
   return (
@@ -46,7 +57,10 @@ const FormComponent = () => {
           name="username"
           value={formData.username}
           onChange={handleInputChange}
+          aria-describedby={usernameId}
+          ref={usernameRef}
         />
+        {/* <p id={usernameId}>should enter atleast one character</p> */}
         {errors.username && <span>{errors.username}</span>}
       </div>
       <div>
@@ -59,9 +73,19 @@ const FormComponent = () => {
         />
         {errors.email && <span>{errors.email}</span>}
       </div>
+      <div>
+        <label>phone:</label>
+        <input
+          type="phone"  
+          name="phone"
+          value={formData.phone}
+          onChange={handleInputChange}
+        />
+        {errors.phone && <span>{errors.phone}</span>}
+      </div>
+
       <button type="submit">Submit</button>
     </form>
   );
 };
-
 export default FormComponent;

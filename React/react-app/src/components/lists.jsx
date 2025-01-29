@@ -1,12 +1,12 @@
 import React from 'react'
 function List ()
 {
-    const person = ['kannan',22];
+    const persons = ['kannan',22];
     return(
         <ul>
-            {person.map((per,ind)=>
+            {persons.map((person,index)=>
             (
-                <li key = {ind}>{per}</li>
+                <li key = {index}>{person}</li>
             )
             )}
         </ul>

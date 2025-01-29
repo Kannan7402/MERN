@@ -1,10 +1,14 @@
 import React from 'react';
-function Child({name,age})
+function Child({value})
 {
     return(
         <div>
-            <h1> {name}</h1>
-            <p>{age}</p>
+            {Object.values(value).map((current,index)=>(
+                <>
+                {console.log(current)}
+                    <p key={index}>{current}</p>
+                </>
+            ))}
         </div>
     )
 }

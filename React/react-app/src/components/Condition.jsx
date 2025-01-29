@@ -1,12 +1,13 @@
 import React,{useState} from 'react'
 function Login()
 {
-    const[isLoggedin ,setisLoggedin] = useState(false);
+    const[isLoggedIn ,setisLoggedIn] = useState(false);
     {
        return(
             <>
-                <button onClick={()=>setisLoggedin(true)}>login</button>
-                {isLoggedin?
+                <button onClick={()=>setisLoggedIn(true)}>login</button>
+                <button onClick={()=>setisLoggedIn(false)}>log off</button>
+                {isLoggedIn?
                 <h1>Welcome</h1>:
                 <h1>Login first</h1>}
             </>

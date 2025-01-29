@@ -1,38 +1,23 @@
 import './App.css';
-import {BrowserRouter as Router,Routes,Route,Link} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Parent from './components/Parent'
 import Increase from './components/hooks'
 import Day from './components/switch'
 import List from './components/lists'
 import ValidateForm from './components/forms';
 import Login from './components/Condition';
+import Useref from './components/UseRef';
+import Tictac from './components/board';
+import Navigation from './components/Navigation';
+import Usememo from './components/useMemo';
+import Lazy from './components/lazy';
+
 function App()
  {
   return (
     <>
-    <div className="App">
-    </div>
     <Router>
-      <ul>
-        <li>
-        <Link to='/parent'>Parent</Link>
-        </li>
-        <li>
-        <Link to='/hooks'>Counter</Link>
-        </li>
-        <li>
-        <Link to='/switch'>switch</Link>
-        </li>
-        <li>
-        <Link to='/lists'>List</Link>
-        </li>
-        <li>
-        <Link to='/forms'>Forms</Link>
-        </li>
-        <li>
-        <Link to='/Condition'>Condition</Link>
-        </li>
-      </ul>
+      <Navigation/>
       <Routes>
       <Route path='/parent' element={<Parent/>}></Route>
       <Route path='/hooks' element={<Increase/>}></Route>
@@ -40,6 +25,10 @@ function App()
       <Route path='/lists' element={<List/>}></Route>
       <Route path='/forms' element={<ValidateForm/>}></Route>
       <Route path='/Condition' element={<Login/>}></Route>
+      <Route path='/UseRef' element={<Useref/>}></Route>
+      <Route path='/board' element={<Tictac/>}></Route>
+      <Route path='/useMemo' element={<Usememo/>}></Route>
+      <Route path='/lazy' element={<Lazy/>}></Route>
       </Routes>
     </Router>
     </>

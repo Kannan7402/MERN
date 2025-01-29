@@ -3,12 +3,11 @@ import Child from './Child'
 function Parent ()
 {
     const user = {
-        name : 'user',
+        name : 'KANNAN',
         age  : 22
     }
     return( 
-        <Child name ={user.name}
-        age = {user.age}/>
+        <Child value={user}/>
     )
 }
 export default Parent;
