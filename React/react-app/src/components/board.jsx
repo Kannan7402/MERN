@@ -11,7 +11,6 @@ function Tictac()
     if (winner(squares) || squares[i]) {
       return; // If there is already a winner or the square is filled, do nothing
     }
-
     const curr = squares.slice(); // Create a copy of the squares array to avoid mutating state
     curr[i] = nextMove ? "X" : "O"; // Assign "X" or "O" to the clicked square
     setSquares(curr); // Update the squares state

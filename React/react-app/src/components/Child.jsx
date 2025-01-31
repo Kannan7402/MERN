@@ -1,15 +1,15 @@
 import React from 'react';
-function Child({value})
-{
-    return(
-        <div>
-            {Object.values(value).map((current,index)=>(
-                <>
-                {console.log(current)}
-                    <p key={index}>{current}</p>
-                </>
-            ))}
-        </div>
-    )
+import Custom from './cutomElements';
+function Child() {
+    function handleClick ()
+        {
+            alert('button clicked')
+        }
+  return (
+    <>
+    <Custom label={'click me'} onClick={handleClick}> click</Custom>
+    </>
+  )
 }
-export default Child;
+
+export default Child

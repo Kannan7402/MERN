@@ -1,37 +1,45 @@
-import React, {useState } from 'react';
+import React, { useState ,useMemo} from 'react';
 
 function Usememo() {
-  const [count, setCount] = useState(0);
-  const [text, setText] = useState('');
+  const [text, setText] = useState(''); // Regular text input
+  const [range, setRange] = useState(0); // Number for sum calculation
 
-  // Perform the expensive calculation on each render
-  const expensiveCalculation=()=>
-    {
-    console.log('Performing expensive calculation...');
-    let result = 0;
-    for (let i = 0; i < 1000; i++) {
-      result += i;
+//   function calculateSum() {
+//     console.log('Recalculating sum...');
+//     let total = 0;
+//     for (let i = 0; i < range; i++) {
+//       total += i;
+//     }
+//     return total;
+//   }
+//  const sum = calculateSum();
+
+  const sum = useMemo(() => {
+    console.log('Recalculating sum...');
+    let total = 0;
+    for (let i = 0; i < range; i++) {
+      total += i;
     }
-    return result;
-  };
+    return total;
+  }, [range]);
 
   return (
     <div>
-      <h1>Expensive Calculation Example</h1>
-      <div>
-        <p>Expensive Calculation Result: {expensiveCalculation()}</p>
-        <button onClick={() => setCount(count + 1)}>
-          Increment Count
-        </button>
-      </div>
-      <div>
-        <input
-          type="text"
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-          placeholder="Type something"
-        />
-      </div>
+      <label htmlFor="name">NAME: </label>
+      <input
+        type="text"
+        value={text}
+        onChange={(e) => setText(e.target.value)} 
+      />
+      <br />
+      <label htmlFor="range">Range: </label>
+      <input
+        type="number"
+        value={range}
+        onChange={(e) => setRange(Number(e.target.value))}
+      />
+      <p>Computed Sum: {sum}</p>
+      <p>Text Value: {text}</p>
     </div>
   );
 }

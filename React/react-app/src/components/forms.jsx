@@ -12,6 +12,8 @@ const FormComponent = () => {
   });
 
   const usernameRef = useRef(null);
+  const emailRef = useRef(null);
+  const phoneRef = useRef(null);
   const usernameId = useId();
   
   const handleInputChange = (e) => {
@@ -26,16 +28,22 @@ const FormComponent = () => {
     const newErrors = {};
     if (!formData.username) {
       usernameRef.current.focus();
+      newErrors.username = 'username required';
       e.preventDefault();
     }
     if (!formData.email) {
       newErrors.email = 'Email is required';
+      emailRef.current.focus();
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = 'Email is invalid';
+      emailRef.current.focus();
+      newErrors.email = 'email validation is incorrect';
+
     }
     if (!formData.phone) {
       newErrors.phone = 'Phone number is required';
+      phoneRef.current.focus();
     } else if (!/^\d{10}$/.test(formData.phone)) {
+      phoneRef.current.focus();
       newErrors.phone = 'Phone number must be 10 digits';
     }
     setErrors(newErrors);
@@ -49,12 +57,12 @@ const FormComponent = () => {
     }
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} id='form'>
       <div>
-        <label>Username:</label>
+        <label className='formlabel'>Username:</label>
         <input
           type="text"
-          name="username"
+          name="username" className='forminput'
           value={formData.username}
           onChange={handleInputChange}
           aria-describedby={usernameId}
@@ -64,27 +72,29 @@ const FormComponent = () => {
         {errors.username && <span>{errors.username}</span>}
       </div>
       <div>
-        <label>Email:</label>
+        <label className='formlabel'>Email:</label>
         <input
-          type="email"
+          type="email" className='forminput'
           name="email"
           value={formData.email}
           onChange={handleInputChange}
+          ref={emailRef}
         />
         {errors.email && <span>{errors.email}</span>}
       </div>
       <div>
-        <label>phone:</label>
+        <label className='formlabel'>phone:</label>
         <input
           type="phone"  
-          name="phone"
+          name="phone" className='forminput'
           value={formData.phone}
           onChange={handleInputChange}
+          ref={phoneRef}
         />
         {errors.phone && <span>{errors.phone}</span>}
       </div>
 
-      <button type="submit">Submit</button>
+      <button type="submit" className='formbutton'>Submit</button>
     </form>
   );
 };

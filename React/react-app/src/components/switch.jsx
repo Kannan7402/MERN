@@ -1,73 +1,44 @@
-import React from "react";
-function Day ()
-{
-//     let input = document.getElementById('input');
-//     const [date,setDate] = useState(input);
-//     function Handleclick(i){
-//     switch(i)
-//     {
-//         case '1':
-            
-//                 setDate("monday") ; 
-//                 break;
-//             case '2':
-            
-//             setDate("tuesday") ;
-//                 break;
-//             case '3':
-            
-//             setDate("wednesday") ;
-//                 break;
-//             case '4':
-            
-//             setDate("thursday") ;
-//                 break;
-//             case '5':
-            
-//             setDate("friday") ;
-//                 break;
-//             case '6':
-            
-//             setDate("saturday") ;
-//                 break;
-//             case '7':
-            
-//             setDate("sunday") ;
-//                 break;
-//         }
-// }
-// return(
-//     <>
-//     <label htmlFor="name">Date</label>
-//     <input type="text" id="input"onChange={(e)=>{Handleclick(e.target.value)}}></input>
-//     <p>{date}</p>
-//     </>
-// )
+import React, { useState } from 'react';
 
-const tasks = [
-    { id:1 , name : 'kannan',day : 'mon'},
-    {id :2, name : 'bala', day : 'tue'}
-];
-const getWorkday = (name)=>
-{ 
-    switch(name) {
-            case 'kannan':
-                return 'kannan come to work on monday';
-            case 'bala':
-                return 'bala come to work on tuesday';
-                default : 
-                return 'works all day';
+function Day() {
+    const [input, setInput] = useState('');
+    const [message, setMessage] = useState('');
+    function handleChange(event) {
+        setInput(event.target.value);
     }
+
+    const getWorkdayMessage = (inputDay) => {
+        switch (inputDay) {
+            case 'monday':
+                return ' kannan comes to work on Monday';
+            case 'tuesday':
+                return 'bala comes to work on Tuesday';
+            case 'wednesday':
+                return 'rathesh comes to work on Wednesday';
+            case 'thursday':
+                return 'lokesh comes to work on Thursday';
+            default:
+                return 'No one works on this day';
+        }
+    };
+
+    const handleSubmit = () => {
+        setMessage(getWorkdayMessage(input));
+    };
+
+    return (
+        <>
+            <h1>Day Work</h1>
+            <input
+                type="text"
+                value={input}
+                onChange={handleChange}
+                placeholder="Enter a day"
+            />
+            <button onClick={handleSubmit}>Submit</button>
+            <h2>{message}</h2>
+        </>
+    );
 }
-return(
-    <>
-    <h1>Day work</h1>
-    <ul>{tasks.map((tasks,index)=>
-    (
-       <li key={index}>{getWorkday(tasks.name)}</li>
-    ))}
-    </ul>
-    </>
-)
-}
+
 export default Day;

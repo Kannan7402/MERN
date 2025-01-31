@@ -1,20 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState} from "react";
 const Increase = () => {
   const [count, setCount] = useState(0);
-  // useEffect(()=>
-  // {
-  //   console.log('count updated to '+ count);
+ useEffect(()=>
+{
+  console.log('updated count',count);
+  return()=>
 
-  //     setCount(1000);
-
-  //   console.log(count);
-  //   return () =>
-  //   {
-  //     setCount(0);
-  //     console.log(count);
-  //     console.log('memory cleaned');
-  //   }
-  // },[count])
+    {
+      console.log('memory cleaned ',count);
+    };
+  }, [count]);
   return (
     <div>
       <h2>Count: {count}</h2>
