@@ -14,6 +14,9 @@ import Navigation from './Navigation';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Usereducer from './useReducer';
 import Custom from './cutomElements';
+import ProfilerDemo from './profiler';
+import Modal from './portal';
+import UseContextDemo from './useContext';
 function Routing ()
 {
     return(
@@ -34,6 +37,9 @@ function Routing ()
       <Route path='/lazy' element={<Lazy/>}></Route>
       <Route path='/useReducer' element={<Usereducer/>}></Route>
       <Route path='/customElement' element={<Custom/>}></Route>
+      <Route path='/profiler' element={<ProfilerDemo/>}></Route>
+      <Route path='/portal' element={<Modal/>}/>
+      <Route path='/useContextDemo' element={<UseContextDemo/>}/>
       
       </Routes>
     </Router>

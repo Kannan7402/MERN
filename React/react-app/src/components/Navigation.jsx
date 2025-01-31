@@ -14,7 +14,10 @@ function Navigation(){
             { to: '/useMemo', label: 'Usememo' },
             { to: '/lazy', label: 'Lazy' },
             { to: '/useReducer', label: 'Usereducer' },
-            { to: '/customElement', label: 'Custom' }
+            { to: '/customElement', label: 'Custom' },
+            { to : './profiler' , label : 'ProfilerDemo'},
+            {to:'/portal',label:'Portal'},
+            {to:'/useContextDemo',label:'UseContextDemo'}
         ];
         return(
             <>
