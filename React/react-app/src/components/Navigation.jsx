@@ -17,7 +17,9 @@ function Navigation(){
             { to: '/customElement', label: 'Custom' },
             { to : './profiler' , label : 'ProfilerDemo'},
             {to:'/portal',label:'Portal'},
-            {to:'/useContextDemo',label:'UseContextDemo'}
+            {to:'/useContextDemo',label:'UseContextDemo'},
+            {to:'/filterAxios',label:'Axios demo'},
+            {to:'/axios', label :'axios'}
         ];
         return(
             <>

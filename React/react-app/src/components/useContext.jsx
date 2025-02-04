@@ -1,5 +1,8 @@
 import React, { createContext } from 'react';
 import Parent from './Parent';
+import App from '../App';
+import { Route } from 'react-router-dom';
+import Child from './Child';
 
 // Create context
 export const NameContext = createContext();
@@ -9,7 +12,7 @@ function UseContextDemo() {
 
   return (
     <NameContext.Provider value={name}>  {/* Provide the name directly */}
-      <Parent />
+      <Parent/>
     </NameContext.Provider>
   );
 }

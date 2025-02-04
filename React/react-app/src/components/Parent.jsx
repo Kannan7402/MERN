@@ -5,7 +5,7 @@ function Parent() {
   const name = useContext(NameContext);  // Consume the name from the context
 
   console.log(name);  // This should log "kanna" to the console
-  return <h1>I'm {name}</h1>;  // This should render "I'm kanna"
+  return <h1>I'm  from Parent component {name}</h1>;  // This should render "I'm kanna"
 }
 
 export default Parent;
