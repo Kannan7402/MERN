@@ -1,11 +1,29 @@
 import { useState } from "react";
-function useCounter ( initial = 0)
-{
-    const [count,setCount]=useState(initial);
-    const increment =()=> setCount(count+1);
-    const decrement =()=> setCount(count-1);
-    const reset =()=> setCount(initial);
-    return{
-        count,increment , decrement, reset};
-    };  
-export default useCounter
+
+function useForm() {
+  const [form, setForm] = useState({
+    name: '',
+    id: ''
+  });
+  const [error,setError]= useState('');
+  function handleSubmit(e)
+  {
+    e.preventDefault();
+    if(form.name==='')
+    {
+      setError('please enter name');
+    }
+  }
+
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
+  }
+
+  return {
+    form, 
+    handleChange,handleSubmit,error
+  };
+}
+
+export default useForm;

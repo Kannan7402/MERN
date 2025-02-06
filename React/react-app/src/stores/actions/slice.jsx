@@ -8,12 +8,12 @@ export const userSlice = createSlice({
     reducers:{
         addUser:(state,action)=>
         {
-            state.users=[...state.users,action.payload];
+            state.users.push(action.payload);   
 
         },
         deleteUser:(state,action)=>
         {
-            state.users = state.users.filter((user,index)=>index!== payload);
+            state.users = state.users.filter((user,index)=>index!== action.payload);
         }
     }
 })

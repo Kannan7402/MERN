@@ -1,24 +1,26 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Parent from './Parent';
-import Increase from './hooks';
-import Day from './switch';
-import FormComponent from './forms';
-import FocusInput from './useRef';
-import Lazy from './lazy';
-import Login from './Condition';
-import Usememo from './useMemo';
-import Tictac from './board';
-import List from './lists';
-import Child from './Child';
+import Parent from '../components/Parent';
+import Day from '../components/switch';
+import FormComponent from '../components/forms';
+import FocusInput from '../components/useRef';
+import Lazy from '../components/lazy';
+import Login from '../components/Condition';
+import Usememo from '../components/useMemo';
+import Tictac from '../components/board';
+import List from '../components/lists';
+import Child from '../components/Child';
 import Navigation from './Navigation';
-import Usereducer from './useReducer';
-import Custom from './cutomElements';
-import ProfilerDemo from './profiler';
-import Modal from './portal';
-import UseContextDemo from './useContext';
-import Fetchdata from './filterAxios';
-import AxiosExample from './axios';
+import Usereducer from '../components/useReducer';
+import Custom from '../components/cutomElements';
+import ProfilerDemo from '../components/profiler';
+import Modal from '../components/portal';
+import UseContextDemo from '../components/useContext';
+import Fetchdata from '../components/filterAxios';
+import AxiosExample from '../components/axios';
+import AddUser from '../stores/reducers/addUser';
+import DisplayFetch from '../components/hooks';
+import Lifecycle from '../components/classComponent';
 function Routing ()
 {
     return(
@@ -28,7 +30,7 @@ function Routing ()
       <Routes>
       <Route path='/parent' element={<Parent/>}></Route>
       <Route path='/Child' element={<Child/>}></Route>
-      <Route path='/hooks' element={<Increase/>}></Route>
+      <Route path='/hooks' element={<DisplayFetch/>}></Route>
       <Route path='/switch' element={<Day/>}></Route>
       <Route path='/lists' element={<List/>}></Route>
       <Route path='/forms' element={<FormComponent/>}></Route>
@@ -44,7 +46,9 @@ function Routing ()
       <Route path='/useContextDemo' element={<UseContextDemo/>}/>
       <Route path='/filterAxios' element={<Fetchdata/>}/>
       <Route path='/axios' element={<AxiosExample/>}/>
-      
+      <Route path='/addUser' element={<AddUser/>}/>
+      <Route path='/classComponent' element={<Lifecycle/>}/>
+
       </Routes>
     </Router>
     </>

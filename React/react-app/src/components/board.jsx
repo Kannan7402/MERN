@@ -1,19 +1,18 @@
 import React, { useState } from 'react';
 import Square from './Square'; // Importing the Square component
 
-function Tictac() 
-{
+function Tictac() {
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [nextMove, setMove] = useState(true); // true means X's turn, false means O's turn
 
-  // Function to handle the click on a square
+
   function handleClick(i) {
     if (winner(squares) || squares[i]) {
       return; // If there is already a winner or the square is filled, do nothing
     }
     const curr = squares.slice(); // Create a copy of the squares array to avoid mutating state
     curr[i] = nextMove ? "X" : "O"; // Assign "X" or "O" to the clicked square
-    setSquares(curr); // Update the squares state
+    setSquares(curr);
     setMove(!nextMove); // Switch turn to the other player
   }
 
@@ -36,7 +35,7 @@ function Tictac()
         return squares[a]; // Return winner (either "X" or "O")
       }
     }
-    return null; // No winner yet
+    return null;
   }
 
   // Check if there's a winner
@@ -47,7 +46,7 @@ function Tictac()
   } else {
     status = 'Next player: ' + (nextMove ? 'X' : 'O');
   }
-  function handlebtn(){
+  function handlebtn() {
     setSquares(Array(9).fill(null));
   }
   return (

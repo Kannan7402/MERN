@@ -4,7 +4,7 @@ function Navigation(){
             const linkItems = [
             { to: '/parent', label: 'Parent' },
             { to: '/Child', label: 'Child' },
-            { to: '/hooks', label: 'Counter' },
+            { to: '/hooks', label: 'Hooks' },
             { to: '/switch', label: 'Switch' },
             { to: '/lists', label: 'List' },
             { to: '/forms', label: 'Forms' },
@@ -19,7 +19,9 @@ function Navigation(){
             {to:'/portal',label:'Portal'},
             {to:'/useContextDemo',label:'UseContextDemo'},
             {to:'/filterAxios',label:'Axios demo'},
-            {to:'/axios', label :'axios'}
+            {to:'/axios', label :'axios'},
+            {to:'./addUser', label :'AddUser'},
+            {to:'./classComponent', label :'class'}
         ];
         return(
             <>

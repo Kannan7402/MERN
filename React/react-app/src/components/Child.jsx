@@ -1,21 +1,22 @@
 import React from 'react';
 import Custom from './cutomElements';
-import useCounter from './customHooks';
+import useForm from './customHooks'
 function Child() {
-  const{count,increment,decrement,reset}=useCounter(0);
-    function handleClick ()
-        {
-            alert('button clicked')
-        }
+  const { form, handleChange, handleSubmit, error } = useForm({});
+  function handleClick() {
+    alert('button clicked')
+  }
   return (
     <>
-    <h1>Custom element</h1>
-    <Custom label={'click me'} onClick={handleClick}></Custom>
-    <h2>Custom hook</h2>
-    <button onClick={increment}>increment</button>
-    <button onClick={decrement}>decrement</button>
-    <button onClick={reset}>reset</button>
-    <p>{count}</p>
+      <h1>Custom element</h1>
+      <Custom label={'click me'} onClick={handleClick}></Custom>
+      <h2>Custom hook</h2>
+      <label htmlFor='name'>Name</label>
+      <input type='text' name='name' onChange={handleChange} value={form.name}></input>
+      <label htmlFor='id'>id</label>
+      <input type='text' name='id' onChange={handleChange} value={form.id}></input>
+      <button onClick={handleSubmit}>submit</button>
+      <p>{error}</p>
     </>
   )
 }

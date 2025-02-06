@@ -1,21 +1,22 @@
-import React, { useEffect, useState} from "react";
-const Increase = () => {
-  const [count, setCount] = useState(0);
- useEffect(()=>
+import React,{useState,useEffect} from "react";
+import api from "../core/api/api";
+function DisplayFetch()
 {
-  console.log('updated count',count);
-  return()=>
+  const[data,setData]=useState([]);
+  useEffect(()=>
+  {
+    api.get('/posts')
+    .then((res)=>setData(res.data))
+    .catch(err=>console.log(err)) 
+  },[])
 
-    {
-      console.log('memory cleaned ',count);
-    };
-  }, [count]);
-  return (
-    <div>
-      <h2>Count: {count}</h2>
-      <button onClick={() => setCount(count + 1)}>Increment</button>
-      <button onClick={() => setCount(count - 1)}>Decrement</button>
-    </div>
-  );
-};
-export default Increase;
+return(
+  <>
+  <ul>
+    {data.map((item)=>
+    <li key={item.id}>{item.title}</li>)}
+  </ul>
+  </>
+)
+}
+export default DisplayFetch
