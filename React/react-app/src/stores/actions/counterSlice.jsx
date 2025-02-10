@@ -6,7 +6,7 @@ import { createSlice } from "@reduxjs/toolkit";
     name:'counter',
     initialState,
     reducers:{
-         increment :(state)=> {
+         increment :(state)=>{
             state.count+=1;
          },
          decrement :(state)=>
