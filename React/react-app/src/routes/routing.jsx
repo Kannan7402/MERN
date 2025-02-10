@@ -1,26 +1,28 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Parent from '../components/Parent';
+import Parent from '../components/parent';
 import Day from '../components/switch';
 import FormComponent from '../components/forms';
 import FocusInput from '../components/useRef';
 import Lazy from '../components/lazy';
-import Login from '../components/Condition';
+import Login from '../components/condition';
 import Usememo from '../components/useMemo';
 import Tictac from '../components/board';
 import List from '../components/lists';
-import Child from '../components/Child';
-import Navigation from './Navigation';
+import Child from '../components/child';
+import Navigation from './navigation';
 import Usereducer from '../components/useReducer';
-import Custom from '../components/cutomElements';
+import Custom from '../components/customElements';
 import ProfilerDemo from '../components/profiler';
 import Modal from '../components/portal';
 import UseContextDemo from '../components/useContext';
-import Fetchdata from '../components/filterAxios';
+import Fetchdata from '../components/filteringList';
 import AxiosExample from '../components/axios';
 import AddUser from '../stores/reducers/addUser';
 import DisplayFetch from '../components/hooks';
 import Lifecycle from '../components/classComponent';
+import PostList from '../stores/reducers/addPosts';
+import Counter from '../stores/reducers/addCount';
 function Routing ()
 {
     return(
@@ -48,6 +50,8 @@ function Routing ()
       <Route path='/axios' element={<AxiosExample/>}/>
       <Route path='/addUser' element={<AddUser/>}/>
       <Route path='/classComponent' element={<Lifecycle/>}/>
+      <Route path='/addPosts' element={<PostList/>}/>
+      <Route path='/addCounter' element={<Counter/>}/>
 
       </Routes>
     </Router>

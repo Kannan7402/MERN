@@ -1,5 +1,5 @@
 import React, { createContext } from 'react';
-import Parent from './Parent';
+import Parent from './parent';
 
 // Create context
 export const NameContext = createContext();

@@ -9,6 +9,15 @@
 			"problemMatcher": [],
 			"label": "npm: build - React/react-app",
 			"detail": "react-scripts build"
+		},
+		{
+			"type": "npm",
+			"script": "install",
+			"path": "React/react-app",
+			"group": "clean",
+			"problemMatcher": [],
+			"label": "npm: install - React/react-app",
+			"detail": "install dependencies from package"
 		}
 	]
 }

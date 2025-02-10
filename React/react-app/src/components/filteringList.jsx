@@ -20,7 +20,7 @@ function Fetchdata() {
       item.title.toLowerCase().includes(userInput.toLowerCase())
     );
     
-    setList(filteredList);
+    setList(filteredList,...data);
   }
   
   return (

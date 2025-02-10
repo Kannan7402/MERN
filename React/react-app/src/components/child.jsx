@@ -1,5 +1,5 @@
 import React from 'react';
-import Custom from './cutomElements';
+import Custom from './customElements';
 import useForm from './customHooks'
 function Child() {
   const { form, handleChange, handleSubmit, error } = useForm({});

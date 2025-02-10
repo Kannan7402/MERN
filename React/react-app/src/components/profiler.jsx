@@ -1,5 +1,5 @@
 import React,{Profiler} from "react";
-import Child from "./Child";
+import Child from "./child";
 function ProfilerDemo ()
 {
     const onRenderCallback=(id,phase,actualDuration,baseDuration , startTime,commitTime)=>
