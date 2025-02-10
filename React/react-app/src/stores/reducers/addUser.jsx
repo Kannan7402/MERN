@@ -1,20 +1,19 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addUser, deleteUser } from '../actions/userSlice'; // Import actions
+import { addUser, deleteUser } from '../actions/userSlice';
 
 const UserComponent = () => {
     const [userName, setUserName] = useState('');
-    const users = useSelector((state) => state.userInfo.users); // Accessing users from the store
-    const dispatch = useDispatch(); // To dispatch actions
-    // dispatch 
+    const users = useSelector((state) => state.userInfo.users);
+    const dispatch = useDispatch();
     const handleAddUser = () => {
         if (userName.trim()) {
-            dispatch(addUser(userName)); // Dispatch addUser action with userName as payload
-            setUserName(''); // Reset input after adding
+            dispatch(addUser(userName));
+            setUserName('');
         }
     };
     const handleDeleteUser = (index) => {
-        dispatch(deleteUser(index)); // Dispatch deleteUser action with index as payload
+        dispatch(deleteUser(index));
     };
 
     return (

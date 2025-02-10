@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Square from './square'; // Importing the Square component
+import Square from './square'; 
 
 function Tictac() {
   const [squares, setSquares] = useState(Array(9).fill(null));

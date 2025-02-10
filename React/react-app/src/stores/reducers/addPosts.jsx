@@ -6,7 +6,7 @@ const PostList = () => {
   const { posts, loading, error } = useSelector((state) => state.posts);
 
   useEffect(() => {
-    dispatch(fetchPosts());  // Dispatch fetchPosts action when component mounts
+    dispatch(fetchPosts()); 
   }, [dispatch]);
 
   if (loading) {

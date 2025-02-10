@@ -1,69 +1,73 @@
 import React, { Component } from 'react';
 
-class Lifecycle extends Component {
-    constructor(props) {
-        super(props);
-        console.log('Constructor: The component is being created.');
-        this.state = { count: 0 };
-    }
-
-    static getDerivedStateFromProps(nextProps, nextState) {
-        console.log('getDerivedStateFromProps: Called before every render.');
-        return null;
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        console.log('shouldComponentUpdate: Decides if the component should re-render.');
-        return nextState.count % 2 === 0; // Update only if count is even
-    }
-
-    getSnapshotBeforeUpdate(prevProps, prevState) {
-        console.log('getSnapshotBeforeUpdate: Called right before the DOM is updated.');
-        return null;
-    }
-
-    componentDidMount() {
-        console.log('componentDidMount: Called once after the component is mounted.');
-    }
-
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        console.log('componentDidUpdate: Called after the component updates.');
-        console.log('Previous state count:', prevState.count);
-    }
-
-    componentWillUnmount() {
-        console.log('componentWillUnmount: Called right before the component is removed.');
-    }
-
-    static getDerivedStateFromError(error) {
-        console.log('getDerivedStateFromError: Called when there is an error in a component.');
-        // You can update state here based on the error
-        return { hasError: true };
-    }
-
-    componentDidCatch(error, info) {
-        console.log('componentDidCatch: Called after an error is thrown.');
-        console.error('Error caught:', error);
-        console.info('Error info:', info);
-    }
-
-    handleClick = () => {
-        this.setState({ count: this.state.count + 1 });
+class UserComponent extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: {
+        name: '',
+        email: '',
+      },
     };
+  }
 
-    render() {
-        console.log('render: The component is being rendered.');
-        if (this.state.hasError) {
-            return <div>Error occurred in the component.</div>;
-        }
-        return (
-            <div>
-                <h1>Lifecycle Methods Example</h1>
-                <p>Count: {this.state.count}</p>
-                <button onClick={this.handleClick}>Increment</button>
-            </div>
-        );
-    }
+  handleNameChange = (event) => {
+    this.setState({
+      user: {
+        ...this.state.user, // Copy the current user state
+        name: event.target.value, // Update the name
+      },
+    });
+  };
+
+  handleEmailChange = (event) => {
+    this.setState({
+      user: {
+        ...this.state.user, // Copy the current user state
+        email: event.target.value, // Update the email
+      },
+    });
+  };
+
+  setUser = () => {
+    this.setState({
+      user: {
+        name: 'John Doe',
+        email: 'john.doe@example.com',
+      },
+    });
+  };
+
+  render() {
+    const { name, email } = this.state.user; // Destructure the user state
+
+    return (
+      <div>
+        <h1>User Info</h1>
+        
+        {/* Display user name and email */}
+        <p>Name: {name}</p>
+        <p>Email: {email}</p>
+
+        {/* Input fields to change user info */}
+        <input
+          type="text"
+          placeholder="Enter your name"
+          value={name}
+          onChange={this.handleNameChange}
+        />
+        <input
+          type="email"
+          placeholder="Enter your email"
+          value={email}
+          onChange={this.handleEmailChange}
+        />
+
+        {/* Button to set a predefined user */}
+        <button onClick={this.setUser}>Set User</button>
+      </div>
+    );
+  }
 }
 
-export default Lifecycle;
+export default UserComponent;

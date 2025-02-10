@@ -1,6 +1,4 @@
 import React, { useState ,useMemo} from 'react';
-
-
 function Usememo() {
   const [text, setText] = useState(''); // Regular text input
   const [range, setRange] = useState(0); // Number for sum calculation

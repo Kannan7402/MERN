@@ -1,7 +1,6 @@
 import React, { createContext } from 'react';
 import Parent from './parent';
 
-// Create context
 export const NameContext = createContext();
 
 function UseContextDemo() {
