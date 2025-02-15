@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './css/signUp.css'
 function Signup() {
     const [formData, setFormdata] = useState({
         userName: '',
@@ -13,27 +14,34 @@ function Signup() {
           [name]: value,
         });
       };
+      function handleClick()
+      {
+        console.log('submit');
+      }
 
     return (
-        <div>
+        <>
+        <h1>Sign Up</h1>
+        <div id="signup">
             <label htmlFor="userName">Username
-                <input name='userName' type="text" value={formData.userName} onChange={handleChange}></input>
+                <input className="input" name='userName' type="text" value={formData.userName} onChange={handleChange}></input>
             </label>
             <label htmlFor="Email">E-Mail
-                <input name='Email' type="text" value={formData.Email} onChange={handleChange}></input>
+                <input className="input" name='Email' type="text" value={formData.Email} onChange={handleChange}></input>
             </label>
             <label htmlFor="Phone">Phone
-                <input name='Phone'
+                <input className="input" name='Phone'
                     type="text" value={formData.Phone} onChange={handleChange}></input>
             </label>
             <label htmlFor="Password">Set-Password
-                <input type="text" name='Password' value={formData.Password} onChange={handleChange}></input>
+                <input className="input" type="text" name='Password' value={formData.Password} onChange={handleChange}></input>
             </label>
             <label htmlFor="Password">Re-enter-Password
-                <input type="text" ></input>
+                <input className="input" type="text" ></input>
             </label>
-            <button>Sign-Up</button>
+            <button onClick={handleClick}>Sign-Up</button>
         </div>
+        </>
     )
 }
 export default Signup
