@@ -8,15 +8,14 @@ function Tictac() {
 
   function handleClick(i) {
     if (winner(squares) || squares[i]) {
-      return; // If there is already a winner or the square is filled, do nothing
+      return;
     }
-    const curr = squares.slice(); // Create a copy of the squares array to avoid mutating state
-    curr[i] = nextMove ? "X" : "O"; // Assign "X" or "O" to the clicked square
+    const curr = squares.slice(); 
+    curr[i] = nextMove ? "X" : "O"; 
     setSquares(curr);
-    setMove(!nextMove); // Switch turn to the other player
+    setMove(!nextMove); 
   }
 
-  // Function to check if there is a winner
   function winner(squares) {
     const possibilities = [
       [0, 1, 2], // Row 1

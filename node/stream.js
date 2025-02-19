@@ -38,4 +38,5 @@ writableStream.on('pipe',()=>
 {
     console.log('piped');
 })
+
 readableStream.pipe(writableStream);  // Properly pipe data to the writable stream

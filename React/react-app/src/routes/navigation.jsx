@@ -23,7 +23,9 @@ function Navigation() {
         { to: './addUser', label: 'AddUser' },
         { to: './classComponent', label: 'class' },
         { to: './addPosts', label: 'Thunks' },
-        { to: './addCounter', label: 'counter' }
+        { to: './addCounter', label: 'counter' }, 
+        { to: 'posts', label: 'Posts' },
+        { to:'useEffect',label:'useeffect'}
 
     ];
     return (

@@ -23,6 +23,8 @@ import DisplayFetch from '../components/hooks';
 import Lifecycle from '../components/classComponent';
 import PostList from '../stores/reducers/addPosts';
 import Counter from '../stores/reducers/addCount';
+import Posts from '../components/posts';
+import Effect from '../components/useEffect';
 function Routing ()
 {
     return(
@@ -52,7 +54,8 @@ function Routing ()
       <Route path='/classComponent' element={<Lifecycle/>}/>
       <Route path='/addPosts' element={<PostList/>}/>
       <Route path='/addCounter' element={<Counter/>}/>
-
+      <Route path='/posts' element={<Posts/>}/>
+      <Route path='useEffect' element={<Effect/>}/>
       </Routes>
     </Router>
     </>

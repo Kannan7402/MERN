@@ -1,21 +1,27 @@
 import React, { useId, useRef, useState } from 'react';
+// import { useAuth } from './authetication';
+
 const FormComponent = () => {
+  // const { login, error } = useAuth(); 
   const [formData, setFormData] = useState({
     username: '',
     email: '',
-    phone : ''
+    phone: '',
+    password: '' // Add password field
   });
   const [errors, setErrors] = useState({
     username: '',
     email: '',
-    phone : '',
+    phone: '',
+    password: '', // Add password validation
   });
 
   const usernameRef = useRef(null);
   const emailRef = useRef(null);
   const phoneRef = useRef(null);
+  const passwordRef = useRef(null); // Reference for password field
   const usernameId = useId();
-  
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
 
@@ -24,58 +30,66 @@ const FormComponent = () => {
       [name]: value,
     });
   };
+
   const validateForm = (e) => {
     const newErrors = {};
     if (!formData.username) {
       usernameRef.current.focus();
-      newErrors.username = 'username required';
-      e.preventDefault();
+      newErrors.username = 'Username is required';
     }
     if (!formData.email) {
       newErrors.email = 'Email is required';
       emailRef.current.focus();
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = 'Email format is incorrect';
       emailRef.current.focus();
-      newErrors.email = 'email validation is incorrect';
-
     }
     if (!formData.phone) {
       newErrors.phone = 'Phone number is required';
       phoneRef.current.focus();
     } else if (!/^\d{10}$/.test(formData.phone)) {
-      phoneRef.current.focus();
       newErrors.phone = 'Phone number must be 10 digits';
+      phoneRef.current.focus();
     }
-    setErrors(newErrors);
+    if (!formData.password) {
+      newErrors.password = 'Password is required';
+      passwordRef.current.focus();
+    }
 
+    setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
+
   const handleSubmit = (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
     if (validateForm(e)) {
+      // const { email, password } = formData; // Get email and password from formData
+      // await login(email, password); // Pass email and password to login function
       alert('Form submitted successfully');
     }
   };
+
   return (
-    <form onSubmit={handleSubmit} id='form'>
+    <form onSubmit={handleSubmit} id="form">
       <div>
-        <label className='formlabel'>Username:</label>
+        <label className="formlabel">Username:</label>
         <input
           type="text"
-          name="username" className='forminput'
+          name="username"
+          className="forminput"
           value={formData.username}
           onChange={handleInputChange}
           aria-describedby={usernameId}
           ref={usernameRef}
         />
-        {/* <p id={usernameId}>should enter atleast one character</p> */}
         {errors.username && <span>{errors.username}</span>}
       </div>
       <div>
-        <label className='formlabel'>Email:</label>
+        <label className="formlabel">Email:</label>
         <input
-          type="email" className='forminput'
+          type="email"
           name="email"
+          className="forminput"
           value={formData.email}
           onChange={handleInputChange}
           ref={emailRef}
@@ -83,19 +97,34 @@ const FormComponent = () => {
         {errors.email && <span>{errors.email}</span>}
       </div>
       <div>
-        <label className='formlabel'>phone:</label>
+        <label className="formlabel">Phone:</label>
         <input
-          type="phone"  
-          name="phone" className='forminput'
+          type="text" // Fixed from "phone" to "text" for proper handling
+          name="phone"
+          className="forminput"
           value={formData.phone}
           onChange={handleInputChange}
           ref={phoneRef}
         />
         {errors.phone && <span>{errors.phone}</span>}
       </div>
+      <div>
+        <label className="formlabel">Password:</label>
+        <input
+          type="password"
+          name="password"
+          className="forminput"
+          value={formData.password}
+          onChange={handleInputChange}
+          ref={passwordRef}
+        />
+        {errors.password && <span>{errors.password}</span>}
+      </div>
 
-      <button type="submit" className='formbutton'>Submit</button>
+      <button type="submit" className="formbutton">Submit</button>
+      {/* {error && <p>{error}</p>} Display the error message */}
     </form>
   );
 };
+
 export default FormComponent;
