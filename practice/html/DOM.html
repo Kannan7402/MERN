@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 + p {
+            text-transform: uppercase;
+        }
+        p:hover{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1 id="heading">heading</h1>
+        <p class="para">para 1</p>
+        <p class="para">para 2 </p>
+        <p class="para">para 3</p>
+        <p class="graph">para 4</p>
+        <p class="graph">para 5</p>
+        <p class="graph">para 6</p>
+        <button onclick="change()">click</button>
+    </div>
+    <script>
+        const head = document.getElementById("heading");
+       head.style.color = 'green'
+
+       const para = document.getElementsByClassName("para");
+       for (let i=0;i<para.length;i++)
+       para[i].innerHTML= "hi";
+
+       const btn = document.getElementsByTagName("button")[0];
+       function change()
+       {
+        btn.textContent="ok";
+        console.log(btn.textContent);
+       }
+
+       const firstElementChild = document.querySelector('.graph');
+       console.log(firstElementChild.textContent);
+
+       const allElement = document.querySelectorAll('.graph');
+       allElement.forEach(function(element)
+       {
+       element.style.color = ''
+       })
+    </script>
+</body>
+
+</html>
