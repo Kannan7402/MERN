@@ -1,13 +1,11 @@
 import React, { useId, useRef, useState } from 'react';
-// import { useAuth } from './authetication';
-
 const FormComponent = () => {
-  // const { login, error } = useAuth(); 
+ 
   const [formData, setFormData] = useState({
     username: '',
     email: '',
     phone: '',
-    password: '' // Add password field
+    password: '' 
   });
   const [errors, setErrors] = useState({
     username: '',
@@ -63,8 +61,6 @@ const FormComponent = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm(e)) {
-      // const { email, password } = formData; // Get email and password from formData
-      // await login(email, password); // Pass email and password to login function
       alert('Form submitted successfully');
     }
   };
@@ -122,7 +118,7 @@ const FormComponent = () => {
       </div>
 
       <button type="submit" className="formbutton">Submit</button>
-      {/* {error && <p>{error}</p>} Display the error message */}
+     
     </form>
   );
 };

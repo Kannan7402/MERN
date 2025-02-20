@@ -24,6 +24,7 @@ function Navigation() {
         { to: './classComponent', label: 'class' },
         { to: './addPosts', label: 'Thunks' },
         { to: './addCounter', label: 'counter' }, 
+        {to : '/mocklogin',label:'Mock Login'},
         { to: 'posts', label: 'Posts' },
         { to:'useEffect',label:'useeffect'}
 

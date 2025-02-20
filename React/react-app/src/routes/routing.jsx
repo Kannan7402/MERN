@@ -25,6 +25,9 @@ import PostList from '../stores/reducers/addPosts';
 import Counter from '../stores/reducers/addCount';
 import Posts from '../components/posts';
 import Effect from '../components/useEffect';
+import EditPost from '../components/editPosts';
+import EditComment from '../components/editComments';
+import MockLogin from '../components/mockLogin';
 function Routing ()
 {
     return(
@@ -54,7 +57,11 @@ function Routing ()
       <Route path='/classComponent' element={<Lifecycle/>}/>
       <Route path='/addPosts' element={<PostList/>}/>
       <Route path='/addCounter' element={<Counter/>}/>
-      <Route path='/posts' element={<Posts/>}/>
+      <Route path="/mocklogin" element={<MockLogin/>}/>
+      <Route path='/posts/:id' element={<Posts/>}>
+        <Route path='/posts/:id/editPosts' element={<EditPost/>}/>
+        <Route path='/posts/:id/editComment' element={<EditComment/>}/>
+      </Route>
       <Route path='useEffect' element={<Effect/>}/>
       </Routes>
     </Router>
