@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Geolocation</h1>
+        <p> the location is <span id="lat"></span><span id="alt"></span><span id="lon"></span></p>
+        <button id="btn">click</button>
+    </div>
+    <script>
+        let lat = document.getElementById('lat');
+        let lon = document.getElementById('lon');
+        let alt = document.getElementById('alt');
+        let btn = document.getElementById('btn');
+
+        btn.addEventListener('click',()=>
+    {
+        navigator.geolocation.getCurrentPosition(setLocation);
+    })  
+
+    function setLocation(position)
+    {
+        lat.innerText = position.coords.latitude;
+        alt.innerText = position.coords.altitude;
+        lon.innerText = position.coords.longitude;
+    }
+
+    </script>
+</body>
+</html>

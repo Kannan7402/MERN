@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div-root">
+    </div>
+    <script>
+        let shadowHost = document.getElementById('div-root');
+        let shadowRoot = shadowHost.attachShadow({mode:'open'})
+        shadowRoot.innerHTML = `
+
+        <p>hi</p>
+        
+        <style>
+            p{
+            color:blue;
+            }
+            </style>
+        `
+    </script>
+</body>
+</html>

@@ -13,12 +13,17 @@
             grid-template-rows: 2fr 2fr 2fr;
             grid-template-columns:2fr 2fr 2fr;
             justify-content: center;
-            gap: 20px;
+            gap: 10px 20px;
         }
         div >p{
             
             text-align: center;
-            background-color: blueviolet;
+            background-color: rgb(242, 182, 136);
+            padding: 10px;
+            border: 1px solid black;
+        }
+        #item10{
+            grid-column: 1/span 3;
         }
           
     </style>
@@ -32,6 +37,7 @@
         <p>7</p>
         <p>8</p>
         <p>9</p>
+        <p id="item10">0</p>
     </div>
 </body>
 </html>
