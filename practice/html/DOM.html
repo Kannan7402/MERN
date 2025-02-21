@@ -25,6 +25,9 @@
         <p class="graph">para 5</p>
         <p class="graph">para 6</p>
         <button onclick="change()">click</button>
+        <div id="container">
+        <button onclick = 'add()'>add new </button>
+        </div>
     </div>
     <script>
         const head = document.getElementById("heading");
@@ -49,6 +52,13 @@
        {
        element.style.color = ''
        })
+       function add()
+       {
+
+        const message = document.createElement('div');
+         message.textContent = 'hi';
+         document.getElementById('container').appendChild(message);
+       }
     </script>
 </body>
 

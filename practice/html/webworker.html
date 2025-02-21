@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <button id="start">start</button>
+        <button id="end">end</button>
+    </div>
+    <script>
+      let worker;
+        document.getElementById('start').addEventListener('click', () => {
+            worker = new Worker('practice/html/worker.js');
+            //worker.postMessage('start');
+
+            worker.onmessage = function (e) {
+                console.log(e.data);
+            }
+                        worker.postMessage('start');
+
+        })
+       
+        document.getElementById('end').addEventListener('click',()=>
+    {
+        worker.terminate();
+    })
+    </script>
+</body>
+
+</html>

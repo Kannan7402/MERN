@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <div>
+        <h1>hi</h1>
+        <p id="paragraph"></p>
+    </div>
+    <script>
+            let user =
+             {
+                name:'kannan',
+                age : 22
+             };
+            localStorage.setItem("username", JSON.stringify(user));
+            let name = localStorage.getItem('username');
+            let userObj = JSON.parse(name);
+            const para = document.getElementById("paragraph");
+            para.innerHTML = userObj.name;
+    </script>
+
+   
+</body>
+</html>
