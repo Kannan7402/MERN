@@ -1,28 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+
 </head>
+
 <body>
     <style>
-        #rel{
-            position: relative;
-            background-color: bisque;
-            z-index:0;
+        /* #rel{
+            position: fixed;
+            top: 0;
+            right: 1;
         }
         #abl{
-            position:absolute;
-            background-color: blue;
-            top:10px;
-            z-index:-1;
-        }
+            
+            position: fixed;
+            top: 1;
+            right: 0;
+        } */
     </style>
     <div id="container">
-        <div id="rel">hi</div>
-        <div id="abl">hi</div>
+        <div id="rel">
+            <h1>container 1 </h1>
+            <p> container 1 content</p>
+            <input id='inp1' type="text">
+        </div>
+        <button id="button1">click</button>
     </div>
+    <div id="abl">
+        <h1>container 2 </h1>
+        <p> container 2 content</p>
+        <button id="button2">click</button>
+        <img id='image' src="../html/html_icon.jpg">
+    </div>
+    </div>
+    <script>
+
+        //     document.addEventListener('DOMContentLoaded',()=>
+        // {
+        //     alert('hai');
+        // })
+
+
+        //key board event
+
+        //     document.addEventListener('keydown',(event)=>
+        // {    
+        //     console.log(event.key);
+        // })
+
+        const element = document.getElementById('container');
+        console.log(element.id);
+        // element.textContent = 'hai'
+        element.style.background = 'lightblue'
+
+        const btn1 = document.getElementById('button1');
+        btn1.addEventListener('click', () => {
+            if (element.style.background == 'lightblue') {
+                element.style.background = 'yellow';
+            }
+            else {
+                element.style.background = 'lightblue';
+            }
+        })
+
+        const inp1 = document.getElementById('inp1');
+        inp1.addEventListener('focus', () => {
+            inp1.style.background= 'red'
+        })
+        inp1.addEventListener('blur', () => {
+            inp1.style.background = 'yellow'
+        })
+
+        const image = document.getElementById('image');
+        image.addEventListener('load', () => {
+            console.log('loaded');
+        })
+        image.addEventListener('error', () => {
+            console.log('error')
+        })
+
+        image.addEventListener('abort', () => {
+            console.log("Image was aborted");
+
+        })
+        const btn2 = document.getElementById('button2').addEventListener('click', () => {
+            image.src = ''
+        })
+    </script>
 </body>
+
+
+
 </html>

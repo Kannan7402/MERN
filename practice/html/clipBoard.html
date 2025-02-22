@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <textarea id="tex1"></textarea>
+        <textarea id="tex2"></textarea>
+    </div>
+    <script>
+        const text1 = document.getElementById('tex1');
+        const text2 = document.getElementById('tex2');
+        text1.addEventListener('copy',(event)=>
+    {
+        console.log('copied');
+    })
+    text1.addEventListener('cut',(event)=>
+    {
+        console.log('cut');
+    })
+    text2.addEventListener('paste',(event)=>
+    {
+        console.log('pasted');
+    })
+
+    document.addEventListener('keypress',()=>
+{
+    console.log('release')
+})
+document.addEventListener('keydown',()=>
+{
+    console.log('key presses')
+})
+document.addEventListener('keyup',()=>
+{
+    console.log('touch again')
+})
+        </script>
+</body>
+</html>

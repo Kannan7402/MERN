@@ -7,13 +7,14 @@
 </head>
 <body>
     <div id="div-root">
+        <h1>hello</h1>
     </div>
     <script>
         let shadowHost = document.getElementById('div-root');
         let shadowRoot = shadowHost.attachShadow({mode:'open'})
         shadowRoot.innerHTML = `
 
-        <p>hi</p>
+        <p>hi hello </p>
         
         <style>
             p{

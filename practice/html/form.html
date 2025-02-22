@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale1.0">
+    </head>
+    <body>
+        <fieldset>
+        <legend>
+        <form id="form1">
+            <label>name</label>
+            <input id="inp1" type="text">
+            
+            <button type="submit">submit</button>
+            <button type="reset">reset</button>
+        </form>
+    </legend>
+    </fieldset>
+    <script>
+        window,addEventListener('resize',()=>
+    {
+        console.log('resised');
+    })
+        const form = document.getElementById('form1');
+        const input = document.getElementById('inp1');
+        
+        form.addEventListener('submit',(event)=>
+    {
+        event.preventDefault();
+        let name = input.value;
+        console.log('form submitted', name);
+    })
+    form.addEventListener('reset',()=>
+{
+    console.log('form reseted');
+    // input.value ='';
+})
+    </script>
+    </body>
+</html>
