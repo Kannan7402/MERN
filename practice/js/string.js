@@ -35,3 +35,16 @@ let str5 = 'www.google.com';
 
 str5 = str5.replace('www','http')
 console.log(str5);
+ 
+// let str = 'hello world'
+// let len = str.length;
+// str = str.replace(str[0],str[0].toUpperCase());
+// console.log(str)
+// for(let i=0;i<len;i++)
+// {
+//    if(str[i] == ' ')
+//    {
+//      str[i+1] = str[i+1].toUpperCase();
+//    }
+// }
+// console.log(str)

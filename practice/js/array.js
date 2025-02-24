@@ -26,3 +26,20 @@ console.log(b);
 
 let c = arr.flatMap((a)=> [a,a*2]);
 console.log(c);
+
+
+const str = 'he is software engineer'
+let arr1 = str.split(' ');
+console.log(arr1);
+len = arr1.length;
+console.log(len)
+for(let i =0;i<len;i++)
+{
+    if(arr1[i] == 'software')
+    {
+        arr1.pop('software');
+        arr1.splice(i,0,'senior engineer')
+    }
+}
+
+console.log(arr);
