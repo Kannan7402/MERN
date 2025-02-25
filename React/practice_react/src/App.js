@@ -1,14 +1,12 @@
 import './App.css';
-import Component from './components/component';
-import Parent from './components/parent';
-import Signup from './components/signUp';
+import Routing from './route/routing';
+
 function App() {
   return (
     <div className="App">
-      <Signup/>
-      <Component/>
-      <Parent/>
+      <Routing />
     </div>
   );
 }
+
 export default App;
