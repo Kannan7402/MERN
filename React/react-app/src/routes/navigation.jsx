@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 function Navigation() {
     const linkItems = [
-        { to: '/parent', label: 'Parent' },
+        { to: '/parent', label: 'Parent'},
         { to: '/Child', label: 'Child' },
         { to: '/hooks', label: 'Hooks' },
         { to: '/switch', label: 'Switch' },
@@ -29,6 +29,7 @@ function Navigation() {
         { to:'useEffect',label:'useeffect'}
 
     ];
+
     return (
         <>
             <ul>
