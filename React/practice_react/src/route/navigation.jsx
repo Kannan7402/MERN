@@ -6,7 +6,8 @@ function Navigation() {
     { to: '/component', label: 'Component' },
     { to: '/form', label: 'Form' },
     { to: '/parent',label:'Parent'},
-    { to: '/signUp',label:'SignUp'}
+    { to: '/signUp',label:'SignUp'},
+    {to :'./useEffect',label:'List'}
     
   ];
 
