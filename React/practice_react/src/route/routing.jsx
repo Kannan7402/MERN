@@ -6,6 +6,9 @@ import Form from "../components/form";
 import Signup from "../components/signUp";
 import Parent from "../components/parent";
 import List from "../components/useEffect";
+import Switch from "../components/switch";
+import MyComponent from "../components/classComponents";
+import Lift from "../components/stateUp";
 
 function Routing() {
   return (
@@ -17,6 +20,9 @@ function Routing() {
         <Route path="/signUp" element={<Signup />} />
         <Route path="/parent" element={<Parent />} />
         <Route path="/useEffect" element={<List />} />
+        <Route path="/classComponent" element={<MyComponent />} />
+        <Route path="/switch" element={<Switch />} />
+        <Route path="/stateUp" element={<Lift />} />
         
       </Routes>
     </Router>

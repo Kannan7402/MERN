@@ -10,7 +10,7 @@ function Form()
         <>
         <input type="text" onChange={(e)=>setItem(e.target.value)}>
         </input>
-        <button onClick={Data}>submit</button>
+        <button onClick={Data}>submit</button>      
         </>
     )
 }
