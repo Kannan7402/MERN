@@ -9,6 +9,7 @@ import List from "../components/useEffect";
 import Switch from "../components/switch";
 import MyComponent from "../components/classComponents";
 import Lift from "../components/stateUp";
+import Reducer from "../components/post";
 
 function Routing() {
   return (
@@ -23,6 +24,7 @@ function Routing() {
         <Route path="/classComponent" element={<MyComponent />} />
         <Route path="/switch" element={<Switch />} />
         <Route path="/stateUp" element={<Lift />} />
+        <Route path="/post" element={<Reducer />} />
         
       </Routes>
     </Router>

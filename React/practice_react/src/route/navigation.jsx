@@ -10,7 +10,8 @@ function Navigation() {
     {to :'./useEffect',label:'UseEffect'},
     {to :'./classComponent',label:'Component class'},
     {to :'./switch',label:'List'},
-    {to :'./stateUp',label:'Lift'}
+    {to :'./stateUp',label:'Lift'},
+    {to :'./post',label:'Task'}
   ];
 
   return (

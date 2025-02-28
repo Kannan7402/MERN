@@ -13,7 +13,6 @@
     <script>
         // Use a public WebSocket echo server
         const socket = new WebSocket('wss://echo.websocket.org');
-        // When the WebSocket connection is opened
         socket.onopen = function() {
             console.log('Connected to the WebSocket server');
             document.getElementById("messages").innerHTML += "<p>Connected to the server</p>";
