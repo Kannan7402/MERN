@@ -1,22 +1,20 @@
 import React, { useState } from 'react';
+
 function Login() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [hasAcceptedTerms, setHasAcceptedTerms] = useState(false);
+  const [count, setCount] = useState(0);
+
+  const increment = () => {
+    setCount(0); // First state update
+    setCount(count + 1); // Second state update
+  };
+
   return (
     <div>
-      <button onClick={() => setIsLoggedIn(true)}>Login</button>
-      <button onClick={() => setIsLoggedIn(false)}>Log off</button>
-      <button onClick={() => setHasAcceptedTerms(true)}>Accept Terms</button>
-      <button onClick={() => setHasAcceptedTerms(false)}>Reject Terms</button>
-      {isLoggedIn && hasAcceptedTerms ? (
-        <h1>Welcome!</h1>
-      ) : isLoggedIn && !hasAcceptedTerms ? (
-        <h1>accept the terms to proceed.</h1>
-      ) : (
-        <h1>Please log in </h1>
-      )}
+      <p>Count: {count}</p>
+      <button onClick={increment}>Increment</button>
     </div>
   );
 }
 
 export default Login;
+

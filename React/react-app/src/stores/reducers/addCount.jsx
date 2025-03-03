@@ -8,8 +8,6 @@ const Counter = ()=>
    const dispatch=useDispatch();
    return(
     <>
-    {/* {  type: 'counter/increment'} - action type */}
-    {/* increment() - action creator which is a function*/}
     <button onClick={()=>dispatch(increment())}>add</button> 
     {countValue }
     <button onClick={()=>dispatch(decrement())}>delete</button>

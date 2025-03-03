@@ -28,6 +28,7 @@ import Effect from '../components/useEffect';
 import EditPost from '../components/editPosts';
 import EditComment from '../components/editComments';
 import MockLogin from '../components/mockLogin';
+import UseCallback from '../components/useCallback';
 function Routing ()
 {
     return(
@@ -57,6 +58,7 @@ function Routing ()
       <Route path='/classComponent' element={<Lifecycle/>}/>
       <Route path='/addPosts' element={<PostList/>}/>
       <Route path='/addCounter' element={<Counter/>}/>
+      <Route path='/useCallback' element={<UseCallback/>}/>
       <Route path="/mocklogin" element={<MockLogin/>}/>
       <Route path='/posts/:id' element={<Posts/>}>
         <Route path='/posts/:id/editPosts' element={<EditPost/>}/>

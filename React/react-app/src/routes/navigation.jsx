@@ -26,7 +26,8 @@ function Navigation() {
         { to: './addCounter', label: 'counter' }, 
         {to : '/mocklogin',label:'Mock Login'},
         { to: 'posts', label: 'Posts' },
-        { to:'useEffect',label:'useeffect'}
+        { to:'useEffect',label:'useeffect'} , 
+        { to :'useCallback' , label :'UseCallback'}
 
     ];
 

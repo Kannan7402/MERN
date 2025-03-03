@@ -11,7 +11,10 @@ function Navigation() {
     {to :'./classComponent',label:'Component class'},
     {to :'./switch',label:'List'},
     {to :'./stateUp',label:'Lift'},
-    {to :'./post',label:'Task'}
+    {to :'./post',label:'Task'} , 
+    {to :'./login',label:'Login'} ,
+    {to :'./LazyLoading',label:'LazyComp'},
+    { to : 'Dashboard' , label : 'Dashboard'}
   ];
 
   return (

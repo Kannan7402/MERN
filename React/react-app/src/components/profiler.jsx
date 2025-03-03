@@ -14,7 +14,7 @@ function ProfilerDemo ()
     return( 
         <Profiler id="ProfilerDemo" onRender={onRenderCallback}>
             <Child/>
-        </Profiler>
+        </Profiler >
     )
 }
 export default ProfilerDemo;
