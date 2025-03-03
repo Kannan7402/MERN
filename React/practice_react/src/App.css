@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+/* Navbar.css */
+
+.navbar {
+  background-color: #c9902f;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar-list {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+

@@ -1,26 +1,27 @@
 
-import {useEffect, useState} from 'react'
-import api from '../core/api/api'
-function Effect()
-{
-  const [data,setData]= useState([]);
-  useEffect(()=>
-  {
-    api.get('./users')
-    .then((res)=>setData(res.data))
-    .catch((err)=>console.log(err));
-  })
-return(
-<>
-{data.map((item)=>
-
-<tr>
-  <td key={item.index}>{item.id}</td>
-  <td>{item.name}</td>
-</tr>
-
-)}
-</>
-)
-}
-export default Effect
+// import {useEffect, useState} from 'react'
+// import api from '../core/api/api'
+// function Effect()
+// {
+//   const [count,setCount]= useState(0);
+//   function handleClick()
+//   {
+//  useEffect(()=>
+// {
+//   for(let i=0;i<100;i++)
+//   {
+//   setCount(count+1);
+//   }
+//   return{
+//     setCount(null)
+//   }
+// })
+//   }
+// return(
+// <>
+// <button onClick={handleClick}>click
+// </button>
+// </>
+// )
+// }
+// export default Effect
