@@ -27,8 +27,8 @@ function Navigation() {
         {to : '/mocklogin',label:'Mock Login'},
         { to: 'posts', label: 'Posts' },
         { to:'useEffect',label:'useeffect'} , 
-        { to :'useCallback' , label :'UseCallback'}
-
+        { to :'useCallback' , label :'UseCallback'} , 
+        { to :'message' ,label:'Message'}
     ];
 
     return (

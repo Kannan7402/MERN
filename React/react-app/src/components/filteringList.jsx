@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
-
 function Fetchdata() {
   const [data, setData] = useState([]);
   const [input, setInput] = useState('');

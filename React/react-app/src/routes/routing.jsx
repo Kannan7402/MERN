@@ -29,6 +29,7 @@ import EditPost from '../components/editPosts';
 import EditComment from '../components/editComments';
 import MockLogin from '../components/mockLogin';
 import UseCallback from '../components/useCallback';
+import Message from '../components/message';
 function Routing ()
 {
     return(
@@ -65,6 +66,7 @@ function Routing ()
         <Route path='/posts/:id/editComment' element={<EditComment/>}/>
       </Route>
       <Route path='useEffect' element={<Effect/>}/>
+      <Route path='message' element={<Message/>}/>
       </Routes>
     </Router>
     </>

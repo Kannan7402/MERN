@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
-
 function MockLogin() {
     const [user, setUser] = useState('');
     const [formData, setFormData] = useState({

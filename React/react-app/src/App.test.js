@@ -1,8 +1,12 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+jest.mock('./routes/routing', () => () => <div>Routing Content</div>);
+
+test('renders content from Routing component', () => {
+ 
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  
+  const routingContent = screen.getByText(/Routing Content/i);
+  expect(routingContent).toBeInTheDocument();
 });
