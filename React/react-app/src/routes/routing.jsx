@@ -30,6 +30,7 @@ import EditComment from '../components/editComments';
 import MockLogin from '../components/mockLogin';
 import UseCallback from '../components/useCallback';
 import Message from '../components/message';
+import ChatComponent from '../components/webSocket';
 function Routing ()
 {
     return(
@@ -67,6 +68,7 @@ function Routing ()
       </Route>
       <Route path='useEffect' element={<Effect/>}/>
       <Route path='message' element={<Message/>}/>
+      <Route path='webSocket' element={<ChatComponent/>}/>
       </Routes>
     </Router>
     </>

@@ -15,5 +15,21 @@ function List()
             <li key={index}>{data.id}</li>
         ))}</ul>
     )
+
+    /* 
+    1.useEffect(()=>
+        {
+        ...
+        },[])
+
+        2. useEffect(()=>
+        {
+           ...
+           return()
+           {
+           ///memory cleanup
+           } 
+        },[])
+    */
 }
 export default List

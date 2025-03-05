@@ -28,7 +28,9 @@ function Navigation() {
         { to: 'posts', label: 'Posts' },
         { to:'useEffect',label:'useeffect'} , 
         { to :'useCallback' , label :'UseCallback'} , 
-        { to :'message' ,label:'Message'}
+        { to :'message' ,label:'Message'},
+        { to :'webSocket' ,label:'Socket'}
+
     ];
 
     return (
