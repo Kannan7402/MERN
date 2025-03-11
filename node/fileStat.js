@@ -1,5 +1,5 @@
 const fs = require('fs');
-const path = '../MERN/node/hello.txt'; // Update this path to the correct file location
+const path = '/home/asplap1866/Documents/MERN/node/env.js'; 
 
 fs.stat(path, (err, stats) => {
   if (err) {

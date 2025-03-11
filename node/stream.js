@@ -5,17 +5,17 @@ const writableStream = fs.createWriteStream('output.txt');
 //     readableStream.pause();
 // },1000)
 
-// readableStream.pause();
-// readableStream.on('pause',()=>
-// {
-//     console.log('paused');
-//     readableStream.resume();
+readableStream.pause();
+readableStream.on('pause',()=>
+{
+    console.log('paused');
+    readableStream.resume();
 
-// })
-// readableStream.on('resume',()=>
-// {
-//     console.log('resume');
-// })
+})
+readableStream.on('resume',()=>
+{
+    console.log('resume');
+})
 readableStream.on('end', () => {
     console.log('End event: No more data');
 });
