@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const EventEmitter = require('node:events');
 const eventEmitter = new EventEmitter();
 

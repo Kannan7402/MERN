@@ -3,8 +3,6 @@ const fs = require('fs')
 
 const server = http.createServer((req, res) => {
 
-    // req.method get post put delete
-
     if (req.url === "/") {
         res.writeHead(200, { "Content-Type": "text/plain" })
         res.end('Home-page');
