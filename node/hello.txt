@@ -1,1 +1,1 @@
-i am from fs
+Hello, this is buffered data.This is written immediately.

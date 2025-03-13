@@ -1,8 +1,13 @@
 const express = require('express');
 const app = express();
+const path = require('path')
 const PORT = 5000;
 
 app.use(express.json());
+
+app.set("view engine","ejs")
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 let users = [
   { id: 1, name: 'kannan', email: 'kanna@example.com' },
@@ -11,7 +16,7 @@ let users = [
 
 app.get('/',(req,res)=>
 {
-  res.send('Welcome');
+  res.render("layout",{currentDate: Date.now() });
 })
 
 app.get('/users', (req, res) => {
@@ -20,8 +25,8 @@ app.get('/users', (req, res) => {
 
 app.get('/users/:id', (req, res) => {
   const { id } = req.params;
-  const user = users.find((u) => u.id === parseInt(id)); // Ensure we are comparing integers
-  if (user) {
+  const user = users.find((u) => u.id === parseInt(id));
+    if (user) {
     res.json(user);
   } else {
     res.status(404).send('User not found');
